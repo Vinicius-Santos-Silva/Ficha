@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Teste</title>
+        <meta charset="UTF-8">
+        <!--<link rel="stylesheet" href="./style.css"> -->
+        <style>
+	body{
+    background:url('./Assests/Fundo.jpg');
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: auto 2000px;
+	}
+
+	
+
+	.Container{  /*Tentar colocar um efeito de sobra sobre essa div*/
+		width: 1300px;
+		max-width: 100%;
+		height: 1630px;
+		background-color: white;
+		margin: auto;
+		margin-top: 90px ;
+		border-radius: 3px;
+		opacity:0.92;
+	}
+
+	.Conteudo{
+		display: flex;
+		position: relative;
+		width: 100%;
+	}
+
+	.FtPersonagem{
+		width: 350px;
+		height: 300px;
+		/* border-radius: 200px; */
+		margin-top:42px ;
+		margin-left: 50px;
+		position:absolute;
+	}
+
+	.Dados{
+		max-width:100%;
+		position: absolute;
+		margin-top: 32%;
+		margin-left: 60px;
+	}
+	
+	#container-barras{ 
+		width: 400px;
+		height: 100px;
+	}
+	
+	.Barras{
+		width: 350px;
+		height: 30px;
+		border-radius: 0%;
+		margin-left: -10px;
+		border:1px solid #4A4A4A;
+	}
+	
+	.Status{
+		position: relative;
+		left:50px;
+	}
+	
+	
+	#Vida::-webkit-progress-value {
+			background-color: rgb(230, 59, 59);
+	}
+	#Mana::-webkit-progress-value { 
+		background-color: rgb(59, 73, 230);
+	}
+	#Sanidade::-webkit-progress-value{
+		background-color: #3DB697;
+	}
+
+
+	#QtdeVida{
+		display: flex;
+		position: absolute;
+		margin-top:-30px;
+		margin-left: 130px;
+	}
+	
+	.NmVida{
+		display: flex;
+		position: relative;
+		font-size: 22px;
+	}   
+	
+	#Personagem{
+		color: black;
+		margin-top: 350px;
+		margin-left: 140px;
+		font-size: 30px;
+	}
+	
+	#mochila{
+		width:50px;
+		height:50px;
+		display:flex;
+		margin: auto;
+	}
+	
+	#Inventario{
+		width:60px;
+		height:60px;
+		background-color: white; 
+		border-top-left-radius: 6px;
+		border-top-right-radius: 6px;
+		opacity:0.99;
+		cursor:pointer;
+		position:relative;
+		top: -74rem;
+		left: 600px;
+	}	
+
+	.Textos{
+		display:flex;
+		align-items: column;
+		font-size: 20px;
+	}
+
+	#container-barras{
+			margin-top:-30px;
+	}
+	
+	
+	
+	#Armas, #Acoes, #Propriedades{
+		width: 350px;
+		background-color: #575757;
+		border-radius: 5px;
+		position: relative;
+	}
+	
+	#Armas{
+	 height: 350px;
+	 top: 180px;
+	 left: -10px;
+	}
+	#Acoes{
+	 height: 250px;
+	 top: 220px;
+	 left: -10px;
+	}
+	
+	#Propriedades{
+	 height: 250px;
+	 top: 290px;
+	}
+	
+	#Dados_Pessoais, #Atributos, #Pericias, #Feiticos{
+	 width: 760px;
+	 border-radius: 5px;
+	 background-color: #575757;	
+	 position:relative;
+	}
+	
+	#Dados_Pessoais{
+		height: 350px;
+		top: -1304px;
+		left: 430px;
+	}
+	
+	#Atributos{
+		height: 400px;
+		top: 370px;
+	}
+	
+	#Pericias{
+		height: 440px;
+		top: 419px;
+	}
+	
+	#Feiticos{
+		height: 300px;
+		top: 468px;
+	}	
+	
+        </style>
+    </head>
+
+<body >
+
+ <div class="Container">
+
+  <div class="Conteudo">
+  
+ 
+
+  	<div id="Dados-Personagem">
+       <img src='./Assests/Foto.jpeg' alt="FotoPersonagem" class="FtPersonagem"/> 
+		<h3 id="Personagem">Sahil Alden</h3>
+	</div>
+        
+		
+        
+    <div class="Dados">
+
+	<div id="container-barras"> 
+			<!--Aqui no react teria que ser um input text com useState-->
+		<span class="Textos">Vida</span>
+		<progress max="120" value="70" class="Barras" id="Vida"> </progress> <br/>
+		
+		<div id="QtdeVida">
+		  <span id="vdAtual" class="NmVida">90 </span>
+		  <span id="vdTotal" class="NmVida">/150</span>
+		</div>
+		
+		<input type="checkbox" name="Morrendo" > Lesão grave
+		<input type="checkbox" name="Morrendo" > Inconsciente
+		<input type="checkbox" name="Morrendo" > Morrendo		
+		
+		<br/><br/>
+		
+		<span class="Textos">Sanidade</span>
+        <progress value="50" max="120" class="Barras" id="Sanidade"> </progress> <br/>
+		
+		<div id="QtdeVida">
+		  <span id="vdAtual" class="NmVida">90 </span>
+		  <span id="vdTotal" class="NmVida">/150</span>
+		</div>
+		
+		
+		<input type="checkbox" name="Morrendo" class="Status"> <span class="Status">Traumatizado </span>
+		<input type="checkbox" name="Morrendo" class="Status"> <span class="Status">Enloquecido </span>
+		
+		
+		<br/><br/>
+		<span class="Textos">Mana</span>
+		<progress value="120" max="120" class="Barras" id="Mana"/> </progress>
+		
+		<div id="QtdeVida">
+		  <span id="vdAtual" class="NmVida">90 </span>
+		  <span id="vdTotal" class="NmVida">/150</span>
+		</div>
+		
+	</div>
+	
+		<div id="Armas">
+		
+			<span></span>
+		
+		</div>
+		
+		<div id="Acoes"> 
+			<span></span>
+		<div>
+
+		<div id="Propriedades"> 
+			<span></span>
+		<div>
+		
+		<div id="Dados_Pessoais">
+			<span></span>
+		<div>
+		
+		<div id="Atributos">
+			<span></span>
+		<div>
+		
+		<div id="Pericias">
+			<span></span>
+		<div>
+		
+		<div id="Feiticos">
+			<span></span>
+		<div>
+		
+       
+     
+	</div>
+  </div>
+		<div id="Inventario">
+		<a href="./Paginas/inventario.html" rel="invetario"> 
+			<img src='./Assests/mochila.png' alt="Inventario" id="mochila"/>
+		</a>			
+		<div> 
+ </div>   
+
+		
+
+
+
+</body>
+
+
+</html>

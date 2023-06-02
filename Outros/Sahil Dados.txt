@@ -1,0 +1,89 @@
+Dados:
+Nome - Sahil Alden
+Jogador - viih
+Ocupação - Guardiã de pergaminho
+Idade - 45
+Raça - Raposa 
+Reino/Facção -  
+Armadura - 8 físico e eterio
+Nível- 3
+Pv - 151/151
+Sanidade - 194/194
+Movimento - 18
+Proteção mental- 15 
+Mana - 155/155
+Sorte - 75
+
+Moedas - 0
+Rubis - 5
+
+Atributos:
+Força - 50 
+Constituição - 40
+Poder - 65
+Presença - 65
+Destreza - 80
+Tamanho - 50
+Inteligência - 85
+Educação - 85
+
+Perícias:
+Desarmado - 2d6+1 + 2d12
+Esquivar - 60
+Lutar - 60
+Furtividade - 85
+Escutar - 80
+Encontrar - 95
+Percepção - 70
+Psicologia - 43
+Terapia - 20
+Saltar -  30
+Escalar - 30
+Natação - 30
+Arremessar - 30
+Arte e Ofício - 55
+Culinária - 30
+História - 70
+Usar biblioteca - 65
+Arcano - 110
+Operar Maquinário - 11
+Charme - 45
+Intimidação - 40
+Lábia - 45
+Persuasão - 70
+Prestidigitação - 40
+Negociação - 42
+Língua - 95
+Navegação - 40
+Medicina - 41
+Primeiros Socorros - 40
+
+Feitiço:
+
+Feneco - Escolha um elemento para se tornar imune e outros 3 para ter uma Defesa 12. Fogo, eletricidade, veneno e ácido.
+
+     - Vantagem em testes de Educação e você aprende 1 Feitiço de até 3 Raças a sua escolha.
+Felinos: Linces Cortantes (Passiva) - Recebe +2d6 no dano principal
+Nagas: Medusa (Passiva e Atributo) - Não recebe ataque surpresa e +15 em Furtividade e Encontrar.
+Sulfure:
+
+Toque de Tanna-Toh - Recebe +30 em 3 Perícias a sua escolha + o valor inicial E +2 Ações Livres. Persuasão, história e arte e ofício. 
+
+Saque Rápido - Consegue sacar qualquer coisa com ação livre.
+
+Ações por combate:
+2 Ação Padrão
+1 Ação de Movimento
+5 Ações Livres
+
+
+Inventário:
+Lunacy 
+1 porçao pequena de cura
+1 media de velocidade
+
+1d12+Poder de Dano (Trevas ou Luz)
+
+Propriedades:
+
+Ao empunhar a Lunacy, o portador recebe +10 em Percepção e Vantagem em seus testes, além disso fica imune a danos Luz e de Trevas.

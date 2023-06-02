@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html> 
+<head>
+	<title>Ficha-Jorge</title>
+	<meta charset="utf-8">
+	
+<style>
+		*{
+			font-family: sans-serif;
+		}
+	body{
+		background-image: url("Assests/Fundo.jpg");
+		background-repeat: no-repeat;
+		background-size: cover;
+		
+	}
+	#caixa{
+		width: 1000px;
+		height: 1700px;
+		position: relative;
+		left: 10%;
+		margin-top: 30px;
+	}
+
+/*	Inventario	*/
+	#Invetario{
+		width: 45px;
+		height: 45px;
+		background-color: white;
+		opacity: 0.88;
+		border-top-left-radius: 5px;
+		border-top-right-radius: 5px;
+		cursor: pointer;
+		position: relative;
+		left: 70%;
+	}
+	#mochila{
+		width:40px;
+		height: 40px;
+		display: block;
+		margin: auto;
+		position: relative;
+		top: 2px;
+	}
+	#texto{
+		display: none;
+		position: relative;
+		top: -54px;
+		left: 53px;
+		color: rgba(255, 255, 255, 0.632);
+		font-size: 20px;
+		width: 200px;
+		height: 50px;
+	}
+	#Invetario:hover #texto{
+		display: block;
+	}
+
+/*	Ficha*/	
+	#ficha{
+		width: 1000px;
+		height: 1600px;
+		background-color: rgb(255, 255, 255, 0.88);
+		border-radius: 3px;
+	}
+
+/* 	Imagem e nome do personagem*/
+	#personagem{
+		width: 300px;
+		height: 290px;
+	}
+	#imgPersonagem{
+		width: 300px;
+		height: 280px; 
+		text-align: center;
+		position: relative;
+		left: 40px;
+		top: 30px;
+	}
+	#imgPersonagem strong{
+		font-size: 23px;
+	}
+
+/* 	Barras de vida, sanidade e mana */
+	#caixaBarras{
+		position: relative;
+		top:78px;
+		left: 40px;
+	}
+	#caixaBarras progress{
+		display: block;
+	}
+	#caixaBarras span{
+		font-size: 18px;
+		padding: 3px;
+	}
+	#qtdeVida, #qtdeMana{
+		position: relative;
+		top: 20px;
+		left: 70px;
+	}
+	#qtdeSanidade{
+		position: relative;
+		top: 20px;
+		left: 34px;
+	}
+	#estadosSanidade{
+		position: relative;
+		left: 34px;
+	}
+
+	#vida::-webkit-progress-value{
+		background-color: rgb(230, 59, 59);
+	}
+	#sanidade::-webkit-progress-value{
+		background-color: #3DB697;
+	}
+	#mana::-webkit-progress-value{
+		background-color:rgb(59, 73, 230)
+	}
+
+	.barras{
+		width: 300px;
+		height: 20px;
+		border-radius: 0;
+		border: 1px solid black;
+	}
+	.estado{
+		display: block;
+		padding-bottom: 8px;
+		padding-top: 8px;
+		position: relative;
+	}
+	.estado label{
+		font-size: 13.7px;
+	}
+
+	/* Armas, Acao-Por-Combate, Armadura, Vantagem, Atributos  e Passiva */
+	.camposEmBaixo{
+		width: 300px;
+		background-color: rgb(56, 52, 50, 0.90);
+		position: relative;
+		left: 40px;
+		border-radius: 5px;
+		color: #FFFF;
+	}
+	.titulos{
+		color: #FFFF;
+		font-size:20px;
+		text-align: center;
+	}
+
+	/*  Armas */
+
+	#caixaArmas{
+		height: 264px;
+		top: 80px;
+	}
+	#Armas img{
+		width: 40px;
+		height: 40px;
+		border-radius: 5px;
+		margin-bottom: 2px;
+	}
+	#Armas{
+		width: calc(300px - 12px);
+		height: 40px;
+		position: relative;
+		top: -18px;
+		left: 7px;
+	}
+	#Armas strong{
+		font-size: 16px;
+		padding: 8px;
+		color: #FFFF;
+		position: absolute;
+	}
+	.equipado, .txtequipado{
+		float: right;
+		color: rgb(255, 255, 255, 0.80);
+		position: relative;
+		top: 10px;
+		
+	}
+	/* Tentar fazer com que apareça uma div quando clicada na imagem
+	#teste{
+		display: none;
+		width: 200px;
+		height: 300px;
+		background-color:rgb(56, 52, 50, 0.50);
+		position: relative;
+		top: -84px;
+		left: -13rem;
+		border-radius: 5px;
+	}
+
+	#teste:target {
+		display: block;
+	}
+
+
+
+	.fechar{
+		float: right;
+	}
+	*/
+
+	/* Ações por Combate */
+	#acaoCombate{
+		height: 150px;
+		position: relative;
+		top: 70px;
+		font-size: 18px;
+		color:#FFFF;
+	}
+	#acaoCombate h4{
+		font-size: 20px;
+		text-align: center;
+		color: #FFFF;
+	}
+	#acaoCombate ul{
+		list-style-type: square;
+	}
+	#acaoCombate div{
+		position: relative;
+		top: -30px;
+	}
+	#move{
+		position: relative;
+		top:-46px;
+		font-size: 15px;
+	}
+	#moveTitulo{
+		position: relative;
+		top: -20px;
+		font-size: 17px;
+	}
+
+
+	/* Defesa */
+	#armadura{
+		height: 100px;
+		position: relative;
+		top: 40px;
+		font-size: 18px;
+	}
+	#armadura ul{
+		list-style-type: square;
+	}
+	#armadura div{
+		position: relative;
+		top: -25px;
+	}
+
+	/*  Vantagem */
+	#vantagem{
+		height: 100px;
+		top:30px
+	}
+	#vantagem strong{
+		display: block;
+		font-size: 17px;
+		position: relative;
+		top: -26px;
+		left: 15px;
+	}
+	#vantagem span{
+		font-size: 13px;
+	}
+
+
+	/*  Atributos*/
+	#atributos{
+		height: 200px;
+		top:18px;
+		font-size: 17px;
+		
+	}
+	#atributos ul{
+		list-style-type: none;
+	}
+	#listaAtributos{
+		width: 180px;
+		position: relative;
+		top: -26px;
+		left: 0;
+	}
+	#numerosAtributos{
+		width: 20px;
+		height: 155px;
+		float:right;
+	}
+	#numerosAtributos{
+		position:absolute;
+		left: 200px;
+		top: 0px;
+	}
+
+/*  Passiva*/
+	#passiva{
+		height: 100px;
+		top:10px;
+		font-size: 15px;
+	}
+	#passiva div{
+		position: relative;
+		top: -28px;
+		left: 10px;
+	}
+
+/* Campos do lado */
+	.camposAoLado{
+		width: 550px;
+		height: 300px;
+		background-color: blue;
+		float: right;
+		position: relative;
+		top: -94.3%;
+		right: 50px ;
+		border-radius: 5px;
+	}
+
+
+	
+</style>
+	</head>
+
+<body>
+
+<div id="caixa">
+	<div id="Invetario">
+		<a href="./Invetario.html" rel="inventario">
+			<img src="./Assests/mochila.png" alt="Mochila" id="mochila"> 
+		</a>
+			<div id="texto"><h3>Invetário</h3> </div>
+
+	</div>
+
+		<div id="ficha">
+			
+			<div id="imgPersonagem">
+				<strong>Jorge</strong>
+				<img src="./Assests/Jorge.jpg" alt="Personagem" id="personagem"/>
+			</div>	
+
+				<div id="caixaBarras">
+					<span>Vida</span>
+					<span id="qtdeVida">273 / 273</span>
+					<progress max="273" value="273" id="vida" class="barras"></progress>
+					
+
+					<div class="estado">
+						<input type="checkbox" name="lesaoGrabe"> <label>Lesão Grave</label>
+						<input type="checkbox" name="Inconsciente"> <label>Inconsciente</label>
+						<input type="checkbox" name="morrendo"> <label>Morrendo</label>
+					</div>
+
+					<span>Sanidade</span>
+					<span id="qtdeSanidade">64 / 64</span>
+					<progress max="64" value="64" id="sanidade" class="barras"></progress>
+					
+
+					<div class="estado" id="estadosSanidade">
+						<input type="checkbox" name="traumatizado"> <label>Traumatizado</label>
+						<input type="checkbox" name="Enloquecido"> <label>Enloquecido</label>
+					</div>
+
+					<span>Mana</span> 
+					<span id="qtdeMana">61 / 61</span>
+					<progress max="61" value="61" id="mana" class="barras"></progress>
+				</div>
+				
+					<div id="caixaArmas" class="camposEmBaixo">
+						<h4 id="textoArmas" class="titulos">Armas</h4>
+
+						<div id="Armas">
+							<div id="Arma1">
+								<img src="./Assests/espada quebrada.jfif" id="espadaQuebrada" alt="espada-Principal" /> 
+								<strong>Espada Quebrada</strong>
+								<input type="radio" value="Equipado" name="equipado" class="equipado"> <label class="txtequipado">Equipado</label>
+								
+								<!-- Div que sera exibida ao clicar na imagem 
+								<div id="teste">Sua espada esta quebrada
+									<a href="#" class="fechar">Clique para sair</a>
+								</div> -->							
+							</div>
+
+							<div id="Arma2" class="todasArmas">
+								<img src="./Assests/EspadaGrande.jpeg" alt="Espada Grande"/>
+								<strong>Espada Grande</strong>
+								<input type="radio" value="Equipado" name="equipado" class="equipado"> <label class="txtequipado">Equipado</label>
+							</div>
+
+							<div id="Arma3">
+								<img src="./Assests/Escudo.webp" alt="escudo"/>
+								<strong>Escudo</strong> 
+								<input type="radio" value="Equipado" name="equipado1" class="equipado"> <label class="txtequipado">Equipado</label>
+							</div>
+
+							<div id="Arma4">
+								<img src="./Assests/espada curta.jpg" alt="espadaescudo"/>
+								<strong>Espada/Escudo</strong>
+								<input type="radio" value="Equipado" name="equipado1" class="equipado"> <label class="txtequipado">Equipado</label>
+							</div>
+
+							<div id="Arma5">
+								<img src="./Assests/soco.png" alt="Soco"/>
+								<strong>Desarmado</strong>
+								<input type="radio" value="Equipado" name="equipado" class="equipado"> <label class="txtequipado">Equipado</label>
+							</div>
+
+						</div>
+					</div>
+
+						<div id="acaoCombate" class="camposEmBaixo">
+						   <h4 class="titulos">Ações</h4>
+							<div>
+								<ul>
+								  <li><strong>2 Padrão</strong></li>
+								  <li><strong>1 Movimento</strong></li>
+								  <li><strong>2 Livres</strong></li>
+								</ul>
+								
+								 <h5 class="titulos" id="moveTitulo">Movimento</h5>
+								 	<ul id="move"><li>6 Metros = 4 Quadrados</li>
+									</ul>
+										
+							</div>
+						</div><br/>
+
+							<div id="armadura" class="camposEmBaixo">
+							  <h4 class="titulos">Armaduras</h4>
+								<div>
+									<ul>
+									  <li><strong>60 Física</strong></li>
+									  <li><strong>20 Divina</strong></li>
+									  <li><strong>10 Essência</strong></li>
+									</ul>
+								</div>
+							</div>
+								<div id="vantagem" class="camposEmBaixo">
+									<h4 class="titulos">Vantagens</h4>
+										<div>
+											<strong>2 Esquiva <span>(+1 Passiva: Em matilha)</span></strong>
+											<strong>1 Bloqueio <span>(+1 Muralha Intrasponível)</span></strong>
+											<strong>2 Ataque <span> (+1 Passiva: Em matilha)</span></strong>
+										</div>
+								</div>
+
+									<div id="atributos" class="camposEmBaixo">
+									 <h4 class="titulos">Atributos</h4>
+										<div id="listaAtributos">
+											<ul>
+												<li><strong>Força:</strong></li> 
+												<li><strong>Destreza:</strong></li>
+												<li><strong>Inteligência:</strong></li>
+												<li><strong>Presença:</strong></li>
+												<li><strong>Poder:</strong></li>
+												<li><strong>Tamanho:</strong></li>
+												<li><strong>Constituição:</strong></li>
+												<li><strong>Educação:</strong></li>
+											</ul>
+											
+											<div id="numerosAtributos">
+												<strong>13</strong>
+												<strong>19</strong>
+												<strong>12</strong>
+												<strong>15</strong>
+												<strong>10</strong>
+												<strong>8</strong>
+												<strong>13</strong>
+												<strong>15</strong>
+											  </div>
+										</div>	
+									</div>
+										<div id="passiva" class="camposEmBaixo">
+											<h4 class="titulos">Passivas</h4>
+											 <div>
+												<strong>Em matilha:</strong><span> Ao estar lutando com um ou mais aliados, você ganha
+													vantagem em seus ataques e vantagem em desviar de ataques.</span>
+											 </div>
+										</div>
+			<div id="dadosPessoais" class="camposAoLado">
+				<span></span>
+			</div>				
+		</div>
+	</div>
+</body>
+</html>

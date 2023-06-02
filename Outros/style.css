@@ -1,0 +1,76 @@
+body{
+    background:url('./Assests/teste.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover ;
+}
+
+.Container{  /*Tentar colocar um efeito de sobra sobre essa div*/
+    width: 800px;
+    max-width: 100%;
+    height: 1500px;
+    background-color: rgb(198, 196, 196) ;
+    color: #FFF;
+    margin: auto;
+    border-radius: 3px;
+    opacity:0.92;
+}
+
+.Conteudo{
+    display: flex;
+    position: relative;
+    width: 100%;
+}
+
+.FtPersonagem{
+    width: 220px;
+    height: 220px;
+    border-radius: 200px;
+    margin-top:30px ;
+    margin-left: 30px;
+    position:absolute;
+}
+
+.Dados{
+    position: absolute;
+    margin-top: 32%;
+    margin-left: 60px;
+}
+
+.Barras{
+    width: 300px;
+    height: 50px;
+    border-radius: 0%;
+    color: #FFF;
+}
+#Vida::-webkit-progress-value {
+        background-color: rgb(230, 59, 59);
+}
+#Sanidade::-webkit-progress-value { 
+    background-color: rgb(59, 73, 230);
+}
+
+
+#QtdeVida{
+    display: flex;
+    position: absolute;
+    margin-top: 10px;
+    margin-left: 110px;
+}
+
+
+span{
+    display: flex;
+    position: relative;
+    font-size: 25px;
+}   
+/*
+input{
+  width: 100px;
+  border: none; 
+  text-decoration: none; 
+  background-color: rgb(198, 196, 196) ;
+  color: #FFF;
+  font-size: 20px;
+  padding: 5px;
+}
+*/
