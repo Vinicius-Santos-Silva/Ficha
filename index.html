@@ -207,7 +207,7 @@
 
 	/* Ações por Combate */
 	#acaoCombate{
-		height: 150px;
+		height: 100px;
 		position: relative;
 		top: 70px;
 		font-size: 18px;
@@ -226,15 +226,9 @@
 		top: -30px;
 	}
 	#move{
-		position: relative;
-		top:-46px;
 		font-size: 15px;
 	}
-	#moveTitulo{
-		position: relative;
-		top: -20px;
-		font-size: 17px;
-	}
+
 
 
 	/* Defesa */
@@ -261,8 +255,8 @@
 		display: block;
 		font-size: 17px;
 		position: relative;
-		top: -26px;
-		left: 15px;
+		top: -23px;
+		left: 20px;
 	}
 	#vantagem span{
 		font-size: 13px;
@@ -283,7 +277,7 @@
 		width: 180px;
 		position: relative;
 		top: -26px;
-		left: 0;
+		left: -20px;
 	}
 	#numerosAtributos{
 		width: 20px;
@@ -298,13 +292,13 @@
 
 /*  Passiva*/
 	#passiva{
-		height: 100px;
+		height: 108px;
 		top:10px;
 		font-size: 15px;
 	}
 	#passiva div{
 		position: relative;
-		top: -28px;
+		top: -24px;
 		left: 10px;
 	}
 
@@ -312,13 +306,39 @@
 	.camposAoLado{
 		width: 550px;
 		height: 300px;
-		background-color: blue;
+		background-color: rgb(56, 52, 50, 0.90);
 		float: right;
 		position: relative;
-		top: -94.3%;
+		top: -1467px;
 		right: 50px ;
 		border-radius: 5px;
 	}
+
+	/*	Dados Pessoais*/
+	#tituloDados{
+		position: relative;
+		top: -22px;
+	}
+	.inputs{
+		width: 96%;
+		border: 0;
+		padding: 0;
+		background-color: none;
+		font-size: 17px;
+		background:transparent;
+		color: white;
+		border-bottom: 2px #9b9b9b solid;
+		outline: 0; /* elemento que tira o as bordas focadas quando clicamos em input*/
+		padding: 3px 0 ;
+		position: relative;
+		left: 10px;	
+		transition: border-color 0.2s;
+	}
+	&::placeholder{
+		color: transparent;
+	}
+	
+	
 
 
 	
@@ -417,14 +437,9 @@
 							<div>
 								<ul>
 								  <li><strong>2 Padrão</strong></li>
-								  <li><strong>1 Movimento</strong></li>
+								  <li><strong>1 Movimento <span id="move">(6 Metros)</span></strong></li>
 								  <li><strong>2 Livres</strong></li>
-								</ul>
-								
-								 <h5 class="titulos" id="moveTitulo">Movimento</h5>
-								 	<ul id="move"><li>6 Metros = 4 Quadrados</li>
-									</ul>
-										
+								</ul>		
 							</div>
 						</div><br/>
 
@@ -480,8 +495,15 @@
 													vantagem em seus ataques e vantagem em desviar de ataques.</span>
 											 </div>
 										</div>
+
 			<div id="dadosPessoais" class="camposAoLado">
-				<span></span>
+				<h4 class="titulos" id="tituloDados">Dados Pessoais</h4>
+					<div>
+						<input type="text" value="" name="nome"  placeholder="Nome do Jogador" autocomplete="off" class="inputs">
+						
+						
+
+					</div>
 			</div>				
 		</div>
 	</div>
