@@ -3,15 +3,19 @@
 <head>
 	<title>Ficha-Jorge</title>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
 <style>
-		*{
+	*{
 			font-family: sans-serif;
 		}
 	body{
+		margin:0;
+		padding: 0;
 		background-image: url("Assests/Fundo.jpg");
 		background-repeat: no-repeat;
 		background-size: cover;
+		background-position: center center;
 		
 	}
 	#caixa{
@@ -22,7 +26,7 @@
 		margin-top: 30px;
 	}
 
-/*	Inventario	*/
+/*		Inventario	*/
 	#Invetario{
 		width: 45px;
 		height: 45px;
@@ -56,15 +60,16 @@
 		display: block;
 	}
 
-/*	Ficha*/	
+/*		Ficha*/	
 	#ficha{
-		width: 1000px;
+		max-width: 1000px;
+		min-width: 950px;
 		height: 1600px;
 		background-color: rgb(255, 255, 255, 0.88);
 		border-radius: 3px;
 	}
 
-/* 	Imagem e nome do personagem*/
+/* 		Imagem e nome do personagem*/
 	#personagem{
 		width: 300px;
 		height: 290px;
@@ -81,7 +86,7 @@
 		font-size: 23px;
 	}
 
-/* 	Barras de vida, sanidade e mana */
+/* 		Barras de vida, sanidade e mana */
 	#caixaBarras{
 		position: relative;
 		top:78px;
@@ -135,10 +140,11 @@
 		font-size: 13.7px;
 	}
 
-	/* Armas, Acao-Por-Combate, Armadura, Vantagem, Atributos  e Passiva */
+/* 		Armas, Acao-Por-Combate, Armadura, Vantagem, Atributos  e Passiva */
 	.camposEmBaixo{
 		width: 300px;
-		background-color: rgb(56, 52, 50, 0.90);
+		/*background-color: rgba(56, 52, 50, 0.87); */
+		background-color:rgb(83, 83, 83, 0.90);
 		position: relative;
 		left: 40px;
 		border-radius: 5px;
@@ -150,8 +156,7 @@
 		text-align: center;
 	}
 
-	/*  Armas */
-
+/*  	Armas */
 	#caixaArmas{
 		height: 264px;
 		top: 80px;
@@ -205,7 +210,7 @@
 	}
 	*/
 
-	/* Ações por Combate */
+/* 		Ações por Combate */
 	#acaoCombate{
 		height: 100px;
 		position: relative;
@@ -231,7 +236,7 @@
 
 
 
-	/* Defesa */
+/* 		Defesa */
 	#armadura{
 		height: 100px;
 		position: relative;
@@ -246,7 +251,7 @@
 		top: -25px;
 	}
 
-	/*  Vantagem */
+/*  	Vantagem */
 	#vantagem{
 		height: 100px;
 		top:30px
@@ -263,7 +268,7 @@
 	}
 
 
-	/*  Atributos*/
+/*  	Atributos*/
 	#atributos{
 		height: 200px;
 		top:18px;
@@ -283,14 +288,12 @@
 		width: 20px;
 		height: 155px;
 		float:right;
-	}
-	#numerosAtributos{
 		position:absolute;
 		left: 200px;
 		top: 0px;
 	}
 
-/*  Passiva*/
+/*  	Passiva*/
 	#passiva{
 		height: 108px;
 		top:10px;
@@ -302,11 +305,12 @@
 		left: 10px;
 	}
 
-/* Campos do lado */
+
+/* 		Campos do lado */
 	.camposAoLado{
 		width: 550px;
 		height: 300px;
-		background-color: rgb(56, 52, 50, 0.90);
+		background-color:rgb(83, 83, 83, 0.90);
 		float: right;
 		position: relative;
 		top: -1467px;
@@ -314,7 +318,7 @@
 		border-radius: 5px;
 	}
 
-	/*	Dados Pessoais*/
+/*		Dados Pessoais*/
 	#tituloDados{
 		position: relative;
 		top: -22px;
@@ -349,7 +353,7 @@
 
 <div id="caixa">
 	<div id="Invetario">
-		<a href="./Invetario.html" rel="inventario">
+		<a href="./Paginas/Invetario.html" rel="inventario">
 			<img src="./Assests/mochila.png" alt="Mochila" id="mochila"> 
 		</a>
 			<div id="texto"><h3>Invetário</h3> </div>
@@ -436,9 +440,9 @@
 						   <h4 class="titulos">Ações</h4>
 							<div>
 								<ul>
-								  <li><strong>2 Padrão</strong></li>
-								  <li><strong>1 Movimento <span id="move">(6 Metros)</span></strong></li>
-								  <li><strong>2 Livres</strong></li>
+								  <li><span>2 Padrão</span></li>
+								  <li><span>1 Movimento <span id="move">(6 Metros)</span></span></li>
+								  <li><span>2 Livres</span></li>
 								</ul>		
 							</div>
 						</div><br/>
@@ -447,9 +451,9 @@
 							  <h4 class="titulos">Armaduras</h4>
 								<div>
 									<ul>
-									  <li><strong>60 Física</strong></li>
-									  <li><strong>20 Divina</strong></li>
-									  <li><strong>10 Essência</strong></li>
+									  <li><span>60 Física</span></li>
+									  <li><span>20 Divina</span></li>
+									  <li><span>10 Essência</span></li>
 									</ul>
 								</div>
 							</div>
@@ -466,25 +470,25 @@
 									 <h4 class="titulos">Atributos</h4>
 										<div id="listaAtributos">
 											<ul>
-												<li><strong>Força:</strong></li> 
-												<li><strong>Destreza:</strong></li>
-												<li><strong>Inteligência:</strong></li>
-												<li><strong>Presença:</strong></li>
-												<li><strong>Poder:</strong></li>
-												<li><strong>Tamanho:</strong></li>
-												<li><strong>Constituição:</strong></li>
-												<li><strong>Educação:</strong></li>
+												<li><span>Força:</span></li> 
+												<li><span>Destreza:</span></li>
+												<li><span>Inteligência:</span></li>
+												<li><span>Presença:</span></li>
+												<li><span>Poder:</span></li>
+												<li><span>Tamanho:</span></li>
+												<li><span>Constituição:</span></li>
+												<li><span>Educação:</span></li>
 											</ul>
 											
 											<div id="numerosAtributos">
-												<strong>13</strong>
-												<strong>19</strong>
-												<strong>12</strong>
-												<strong>15</strong>
-												<strong>10</strong>
-												<strong>8</strong>
-												<strong>13</strong>
-												<strong>15</strong>
+												<span>13</span>
+												<span>19</span>
+												<span>12</span>
+												<span>15</span>
+												<span>10</span>
+												<span>8</span>
+												<span>13</span>
+												<span>15</span>
 											  </div>
 										</div>	
 									</div>
