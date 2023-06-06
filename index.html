@@ -325,26 +325,66 @@
 		position: relative;
 		top: -22px;
 	}
-	.inputs{
+	#dadosPessoais div{
+		position: relative;
+		padding: 15px 0 0;
+		margin-top: 10px;
 		width: 96%;
+		position: relative;
+		top:-40px;
+		left: 10px;	
+		height: 240px;
+		background-color: blue;
+
+	}
+	.inputs{
+		width: 100%;
 		border: 0;
 		padding: 0;
 		background-color: none;
 		font-size: 17px;
 		background:transparent;
 		color: white;
-		border-bottom: 2px #9b9b9b solid;
+		border-bottom: 2px #c2c2c2 solid;
 		outline: 0; /* elemento que tira o as bordas focadas quando clicamos em input*/
-		padding: 3px 0 ;
-		position: relative;
-		left: 10px;	
+		padding: 2px 0 ;
 		transition: border-color 0.2s;
-	}
-	&::placeholder{
-		color: transparent;
-	}
 	
-	
+	&::placeholder {
+		color:transparent;
+	}
+	&:placeholder-shown ~ .nmJogador{
+		font-size: 1.2rem;
+		cursor: text;
+		top: 20px;
+	}
+}
+	.nmJogador{
+		position:absolute;
+		top: 0;
+		display: block;
+		transition: 0.2s;
+		font-size: 1rem;
+		color: #c2c2c2;
+	}
+	.inputs:focus{
+	~ .nmJogador, .idadePerson {
+		position: absolute;
+		top: 0;
+		display: block;
+		transition: 0.2s;
+		font-size: 1rem;
+		color: #11998e;
+		font-weight: 700;
+	}
+	border-width: 3px;
+	font-weight: 200;
+	border-image: linear-gradient(to right, #11998E, #38ef7d);
+	border-image-slice:1;
+}
+	.inputs{
+		&:required,&:invalid {box-shadow:none;}
+	}
 
 
 	
@@ -505,10 +545,13 @@
 			<div id="dadosPessoais" class="camposAoLado">
 				<h4 class="titulos" id="tituloDados">Dados Pessoais</h4>
 					<div>
-						<input type="text" value="" name="nome"  placeholder="Nome do Jogador" autocomplete="off" class="inputs">
-						
-						
-
+						<input type="text" value="" name="nome"  placeholder="Nome do Jogador" autocomplete="off" class="inputs" id="nome" required>
+						<label for="nome" class="nmJogador">Nome do jogador</label>
+						<!-- Descobrir alguma forma de fazer esse inputs darem certo.
+							<div>
+						<input type="number" value="" name="idade" placeholder="Idade do Personagem" autocomplete="off" class="inputs" id="idade" required>
+						<label for="idade" class="nmJogador" id="idadePerson">Idade do Personagem</label>
+							</div> -->
 					</div>
 			</div>				
 		</div>
