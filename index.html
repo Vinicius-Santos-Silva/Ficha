@@ -154,10 +154,9 @@
 		color: #FFFF;
 		word-wrap: break-word;
 	}
-	.titulos{
-		/*	Possivel solução para os espaço que os 
+	.titulos{	 
 		margin: 0;
-		padding: 0; */
+		padding: 0; 
 		color: #FFFF;
 		font-size:20px;
 		text-align: center;
@@ -166,7 +165,13 @@
 /*  	Armas */
 	#caixaArmas{
 		height: 264px;
-		top: 80px;
+		margin-top: 100px;
+	}
+	#Armas{
+		width: calc(300px - 12px);
+		height: 40px;
+		position: relative;
+		left: 7px;
 	}
 	#Armas img{
 		width: 40px;
@@ -174,13 +179,7 @@
 		border-radius: 5px;
 		margin-bottom: 2px;
 	}
-	#Armas{
-		width: calc(300px - 12px);
-		height: 40px;
-		position: relative;
-		top: -18px;
-		left: 7px;
-	}
+
 	#Armas strong{
 		font-size: 16px;
 		padding: 8px;
@@ -220,8 +219,7 @@
 /* 		Ações por Combate */
 	#acaoCombate{
 		height: 100px;
-		position: relative;
-		top: 70px;
+		margin-top: 16px;
 		font-size: 18px;
 		color:#FFFF;
 	}
@@ -235,7 +233,7 @@
 	}
 	#acaoCombate div{
 		position: relative;
-		top: -30px;
+		top: -20px;
 	}
 	#move{
 		font-size: 15px;
@@ -246,8 +244,6 @@
 /* 		Defesa */
 	#armadura{
 		height: 100px;
-		position: relative;
-		top: 40px;
 		font-size: 18px;
 	}
 	#armadura ul{
@@ -255,19 +251,18 @@
 	}
 	#armadura div{
 		position: relative;
-		top: -25px;
+		top: -20px;
 	}
 
 /*  	Vantagem */
 	#vantagem{
 		height: 100px;
-		top:30px
+		margin-top: 18px;
 	}
 	#vantagem strong{
 		display: block;
 		font-size: 17px;
 		position: relative;
-		top: -23px;
 		left: 20px;
 	}
 	#vantagem span{
@@ -278,9 +273,8 @@
 /*  	Atributos*/
 	#atributos{
 		height: 200px;
-		top:18px;
+		margin-top: 18px;
 		font-size: 17px;
-		
 	}
 	#atributos ul{
 		list-style-type: none;
@@ -288,7 +282,7 @@
 	#listaAtributos{
 		width: 180px;
 		position: relative;
-		top: -26px;
+		top: -18px;
 		left: -20px;
 	}
 	#numerosAtributos{
@@ -303,7 +297,7 @@
 /*  	Passiva*/
 	#passiva{
 		height: 108px;
-		top:10px;
+		margin-top: 18px;
 		font-size: 15px;
 	}
 	#passiva div{
@@ -331,8 +325,8 @@
 		height: 30px;
 		float: right;
 		position: relative;
-		top: -1518px;
-		right: 25px;
+		bottom: 95.50%;
+		right: 10px;
 		opacity: 0.84;
 	}
 	#caixaDeRiquezas img{
@@ -367,25 +361,19 @@
 		background-color:rgb(83, 83, 83, 0.90);
 		float: right;
 		position: relative;
-		top: -1467px;
-		left: 96px ;
+		bottom: 92.38%;
+		left: 96px;
 		border-radius: 5px;
 	}
-
-	
-
+	.tituloDados{ padding-top: 5px; }	
 
 
 /*		Dados Pessoais	*/
-	#tituloDados{
-		position: relative;
-		top: -22px;
-		display: block;
-	}
 	#dadosPessoais{
 		height: 300px;
 		max-height: 400px;
 	}
+		
 	#caixaDeInputs{
 		width: 96%;
 		max-height: 280px;
@@ -470,6 +458,9 @@
 		left: -50px;
 		margin-top: 10px;
 	}
+	
+
+
 	
 </style>
 	</head>
@@ -634,7 +625,7 @@
 		</div>	
 
 			<div id="dadosPessoais" class="camposAoLado">
-				<h4 class="titulos" id="tituloDados">Dados Pessoais</h4>
+				<h4 class="titulos 	tituloDados" >Dados Pessoais</h4>
 
 				<div id="caixaDeInputs">
 					<div class="">
@@ -670,7 +661,10 @@
 				</div>
 			</div>	
 			   <div class="camposAoLado" id="propriedadesRaca">
-					<h4 class="titulos">Raça: Hynnie</h4>
+					<h4 class="titulos tituloDados" >Raça: Hynnie</h4>
+						<div id="camposPropriedades">
+							<span><strong>Pequeno e Rechonchudo:</strong> Seu </span>
+						</div>
 					
 			   </div>
 
