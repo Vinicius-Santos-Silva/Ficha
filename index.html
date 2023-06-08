@@ -155,6 +155,9 @@
 		word-wrap: break-word;
 	}
 	.titulos{
+		/*	Possivel solução para os espaço que os 
+		margin: 0;
+		padding: 0; */
 		color: #FFFF;
 		font-size:20px;
 		text-align: center;
@@ -304,9 +307,16 @@
 		font-size: 15px;
 	}
 	#passiva div{
-		position: relative;
-		top: -24px;
-		left: 10px;
+		width:100%;
+		max-width: 280px;
+		max-height: 104px;
+		padding-left: 10px;
+		padding-top: 5px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+
 	}
 
 
@@ -316,8 +326,8 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		width: 120px;
-		max-width: 100px;
+		width: 146px;
+		max-width: 150px; 	
 		height: 30px;
 		float: right;
 		position: relative;
@@ -329,6 +339,7 @@
 		width: 20px;
 		height: 20px;
 	}
+
 
 /* 		Inputs da Caixa de Riquezas */
 	#caixaDeRiquezas input{
@@ -357,13 +368,15 @@
 		float: right;
 		position: relative;
 		top: -1467px;
-		left: 50px ;
+		left: 96px ;
 		border-radius: 5px;
 	}
 
+	
 
 
-/*		Dados Pessoais*/
+
+/*		Dados Pessoais	*/
 	#tituloDados{
 		position: relative;
 		top: -22px;
@@ -373,19 +386,31 @@
 		height: 300px;
 		max-height: 400px;
 	}
-
-
-	#dadosPessoais div{
+	#caixaDeInputs{
 		width: 96%;
+		max-height: 280px;
+		position: absolute;
+		top:50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+	#caixaDeInputs div{
 		padding: 15px 0 0;
 		margin-top: 10px;
-		position: relative;
-		left: 10px;	
+		position: relative;	
 	}
-	
-	#caixaDeInputs{
-		top: -60px;
+	#caixaRaca{
+		width: 50%;
+		display: inline-block;
 	}
+	#caixaReino{
+		width: 50%;
+		float:right;
+	}
+	#raca{
+		width: 96%;
+	}
+/*	Classes dos dados Pessoais	*/
 
 	.inputs{
 		width: 100%;
@@ -404,13 +429,13 @@
 	&::placeholder{
 		color:transparent;
 	}
-	&:placeholder-shown ~ .nmJogador{
+	&:placeholder-shown ~ .camposDadosPessoais{
 		font-size: 1.2rem;
 		cursor: text;
 		top: 20px;
 	}
 }
-	.nmJogador{
+	.camposDadosPessoais{
 		position:absolute;
 		top: 0;
 		display: block;
@@ -419,7 +444,7 @@
 		color: #c2c2c2;
 	}
 	.inputs:focus{
-	~ .nmJogador{
+	~ .camposDadosPessoais{
 		position: absolute;
 		top: 0;
 		display: block;
@@ -437,7 +462,14 @@
 		&:required,&:invalid {box-shadow:none;}
 	}
 
-
+/*	Propriedades da Raça	*/
+	#propriedadesRaca{
+		height: 200px;
+		max-height: 300px;
+		position: relative;
+		left: -50px;
+		margin-top: 10px;
+	}
 	
 </style>
 	</head>
@@ -593,38 +625,55 @@
 											 </div>
 										</div>
 		<div id="caixaDeRiquezas">								
-			<img src="./Assests/Moeda.png" alt="moedas">
+			<img src="./Assests/Moeda.png" alt="moedas" >
 			<input type="number" value="20" class="numeros">
-			  <img src="./Assests/Rubi.png" alt="Rubi">
-			  <input type="number" value="1" class="numeros">
-		</div>
+			  <img src="./Assests/rubiQuadrado.png" alt="Rubi"  class="itensParaCompras">
+			  <input type="number" value="10" class="numeros">
+			  	<img src="./Assests/PedraFusao1.png" alt="Pedras de Fusão">
+				<input type="number" value="1" class="numeros">	
+		</div>	
 
 			<div id="dadosPessoais" class="camposAoLado">
 				<h4 class="titulos" id="tituloDados">Dados Pessoais</h4>
 
 				<div id="caixaDeInputs">
-					<div>
+					<div class="">
 						<input type="text" value="" name="nome"  placeholder="Jogador" autocomplete="off" class="inputs" id="nome" required>
-						<label for="nome" class="nmJogador">Jogador</label>
+						<label for="nome" class="camposDadosPessoais">Jogador</label>
 					</div>
 					<div>
 
 						<input type="number" value="" name="idade" placeholder="Idade do Personagem" autocomplete="off" class="inputs" id="idade"required>
-						<label for="idade" class="nmJogador">Idade do Personagem</label>
+						<label for="idade" class="camposDadosPessoais">Idade do Personagem</label>
 					</div>
 
 					<div>
 						<input type="text" value="" name="ocupacao" placeholder="Ocupação" autocomplete="off" class="inputs" id="ocupacao">
-						<label for="ocupacao" class="nmJogador">Ocupação</label>				
+						<label for="ocupacao" class="camposDadosPessoais">Ocupação</label>				
 					  
 					</div>
 				
 					<div>
 						<input type="text" value="" name="sexo" placeholder="Sexo" autocomplete="off" class="inputs" id="sexo">
-						<label for="seox" class="nmJogador">Sexo</label>
+						<label for="sexo" class="camposDadosPessoais">Sexo</label>
+					</div>
+
+					<div id="caixaRaca">
+						<input type="text" value="Hynnie" name="raça" placeholder="Raça" autocomplete="off" class="inputs" id="raca">
+						<label for="raca" class="camposDadosPessoais">Raça</label>
+					</div>
+
+					<div id="caixaReino">
+						<input type="text" value="" name="raça" placeholder="Reino/Facção" autocomplete="off" class="inputs" id="reino">
+						<label for="reino" class="camposDadosPessoais">Reino/Facção</label>
 					</div>
 				</div>
-			</div>				
+			</div>	
+			   <div class="camposAoLado" id="propriedadesRaca">
+					<h4 class="titulos">Raça: Hynnie</h4>
+					
+			   </div>
+
 		</div>
 	</div>
 </body>
