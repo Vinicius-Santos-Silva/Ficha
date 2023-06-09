@@ -6,9 +6,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
 <style>
-	*{
-			font-family: sans-serif;
-		}
+	*{ font-family: sans-serif;}
+	
 	body{
 		margin:0;
 		padding: 0;
@@ -305,14 +304,13 @@
 		max-width: 280px;
 		max-height: 104px;
 		padding-left: 10px;
-		padding-top: 5px;
+		padding-top: 20px;
 		position: absolute;
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
-
 	}
-
+	
 
 
 /*		Caixa de Riquezas	*/
@@ -373,7 +371,9 @@
 		height: 300px;
 		max-height: 400px;
 	}
-		
+	#dadosPessoais h4{
+		padding-top: 5px;
+	}
 	#caixaDeInputs{
 		width: 96%;
 		max-height: 280px;
@@ -398,8 +398,8 @@
 	#raca{
 		width: 96%;
 	}
-/*	Classes dos dados Pessoais	*/
 
+/*	Classes dos dados Pessoais	*/
 	.inputs{
 		width: 100%;
 		border: 0;
@@ -450,13 +450,13 @@
 		&:required,&:invalid {box-shadow:none;}
 	}
 
-/*	Propriedades da Raça	*/
+/*		Propriedades da Raça	*/
 	#propriedadesRaca{
 		height: 230px;
 		max-height: 250px;
 		position: relative;
 		left: -50px;
-		margin-top: 10px;
+		margin-top: 20px;
 	}
 	#propriedadesRaca div{
 		padding: 10px;
@@ -471,38 +471,74 @@
 
 /*		Perícias	*/	
 	#pericias{
-		margin-top: 10px;
+		margin-top: 20px;
 		left: -50px;
 		color: #FFFF;
+		height: 360px;
 	}
-
 	#periciasBloco1{
-		width: 40%;
+		width: 100px;
 		position: relative;
-		left: 30px;
+		left: 18px;
 	}
 	#numerosBloco1{
+		width: 20px;
 		float: right;
+		position: absolute;
+		left: 120px;
+		top: 0;
 	}
-	
+	#periciasVantagem1{
+		top: 20px;
+	}
+
 	#periciasBloco2{
-		width: 40%;
-		float: right;
+		width: 180px;
 		position: relative;
-		top: -18px;
-		left: -30px;
+		float:right;
+		top: -322px;
+		left: -90px;
 	}
 	#numerosBloco2{
-		float: right;
-		position: relative;
+		width: 20px;
+		position: absolute;
+		left: 160px;
+		top: 0;
+	}
+	#vantagemOPR{
+		top:85px;
 	}
 
+
+	.valoresPericias{
+		width: 20px;
+		font-size: 16px;
+		color: #FFFF;
+		outline: none;
+		background: none;
+		border: none;
+		text-align: center;
+		padding-bottom: 2px;
+	}
 	.textoVantagem{
 		font-size: 15px ;
+		padding-left: 10px;
+		float: right;
+		position: absolute;
+		left: 20px;
+		top: 0;
 	}
-	
+	.nomesPericias{
+		display: block;
+		padding-bottom: 3px;
+	}
 
 
+/*		Feitiços	*/
+	#feiticos{
+		margin-top: 20px;
+		left: -50px;
+	}
 	
 </style>
 	</head>
@@ -553,7 +589,7 @@
 				</div>
 				
 					<div id="caixaArmas" class="camposEmBaixo">
-						<h4 id="textoArmas" class="titulos">Armas</h4>
+						<h4 id="textoArmas" class="titulos titulosAoLado">Armas</h4>
 
 						<div id="Armas">
 							<div id="Arma1">
@@ -595,7 +631,7 @@
 					</div>
 
 						<div id="acaoCombate" class="camposEmBaixo">
-						   <h4 class="titulos">Ações</h4>
+						   <h4 class="titulos titulosAoLado">Ações</h4>
 							<div>
 								<ul>
 								  <li><span>2 Padrão</span></li>
@@ -606,7 +642,7 @@
 						</div><br/>
 
 							<div id="armadura" class="camposEmBaixo">
-							  <h4 class="titulos">Armaduras</h4>
+							  <h4 class="titulos titulosAoLado">Armaduras</h4>
 								<div>
 									<ul>
 									  <li><span>60 Física</span></li>
@@ -616,7 +652,7 @@
 								</div>
 							</div>
 								<div id="vantagem" class="camposEmBaixo">
-									<h4 class="titulos">Vantagens</h4>
+									<h4 class="titulos titulosAoLado">Vantagens</h4>
 										<div>
 											<strong>2 Esquiva <span>(+1 Passiva: Em matilha)</span></strong>
 											<strong>1 Bloqueio <span>(+1 Muralha Intrasponível)</span></strong>
@@ -625,7 +661,7 @@
 								</div>
 
 									<div id="atributos" class="camposEmBaixo">
-									 <h4 class="titulos">Atributos</h4>
+									 <h4 class="titulos titulosAoLado">Atributos</h4>
 										<div id="listaAtributos">
 											<ul>
 												<li><span>Força:</span></li> 
@@ -651,23 +687,23 @@
 										</div>	
 									</div>
 										<div id="passiva" class="camposEmBaixo">
-											<h4 class="titulos">Passivas</h4>
+											<h4 class="titulos titulosAoLado">Passivas</h4>
 											 <div>
 												<strong>Em matilha:</strong><span> Ao estar lutando com um ou mais aliados, você ganha
 													vantagem em seus ataques e vantagem em desviar de ataques.</span>
 											 </div>
 										</div>
-		<div id="caixaDeRiquezas">								
-			<img src="./Assests/Moeda.png" alt="moedas" >
-			<input type="number" value="20" class="numeros">
-			  <img src="./Assests/rubiQuadrado.png" alt="Rubi"  class="itensParaCompras">
-			  <input type="number" value="10" class="numeros">
-			  	<img src="./Assests/PedraFusao1.png" alt="Pedras de Fusão">
-				<input type="number" value="1" class="numeros">	
-		</div>	
+			<div id="caixaDeRiquezas">								
+				<img src="./Assests/Moeda.png" alt="moedas" >
+				<input type="number" value="20" class="numeros">
+				<img src="./Assests/rubiQuadrado.png" alt="Rubi"  class="itensParaCompras">
+				<input type="number" value="10" class="numeros">
+					<img src="./Assests/PedraFusao1.png" alt="Pedras de Fusão">
+					<input type="number" value="1" class="numeros">	
+			</div>	
 
 			<div id="dadosPessoais" class="camposAoLado">
-				<h4 class="titulos 	tituloDados" >Dados Pessoais</h4>
+				<h4 class="titulos tituloDados">Dados Pessoais</h4>
 
 				<div id="caixaDeInputs">
 					<div class="">
@@ -719,28 +755,82 @@
 					<h4 class="titulos titulosAoLado">Perícias</h4>
 					<!--Tentar substituir  os campos de números por input number, pois será necessário no React para torna-lá interativa-->
 							<div id="periciasBloco1">
-								<span>Destreza</span>
-
-								<div id="numerosBloco1">
-									<span>20</span> <span class="textoVantagem"> (vantagem)</span>
-								</div>
-
-		
-								</div>
-								<div id="periciasBloco2">
-									<span>Lutar/Briga</span>
-
-										<div id="numerosBloco2">
-											<span>21</span><span class="textoVantagem"> (vantagem)</span>
-										</div>
-								</div>
+								<span class="nomesPericias">Destreza</span>
+								<span class="nomesPericias">Lutar/Briga</span>
+								<span class="nomesPericias">Atirar</span>
+								<span class="nomesPericias">Furtividade</span>
+								<span class="nomesPericias">Escutar</span>
+								<span class="nomesPericias">Encontrar</span>
+								<span class="nomesPericias">Percepção</span>
+								<span class="nomesPericias">Piscologia</span>
+								<span class="nomesPericias">Terapia</span>
+								<span class="nomesPericias">Saltar</span>
+								<span class="nomesPericias">Escalar</span>
+								<span class="nomesPericias">Natação</span>
+								<span class="nomesPericias">Arremessar</span>
+								<span class="nomesPericias">Adestramento</span>
+								<span class="nomesPericias">Arte e oficio</span>
 								
+								<div id="numerosBloco1">
+									<input type="number" value="20" class="valoresPericias"><span class="textoVantagem">(vantagem)</span>
+									<input type="number" value="21" class="valoresPericias"><span class="textoVantagem" id="periciasVantagem1">(vantagem)</span>
+									<input type="number" value="10" class="valoresPericias">
+									<input type="number" value="10" class="valoresPericias">
+									<input type="number" value="10" class="valoresPericias">
+									<input type="number" value="10" class="valoresPericias">
+									<input type="number" value="10" class="valoresPericias">
+									<input type="number" value="12" class="valoresPericias">
+									<input type="number" value="10" class="valoresPericias">
+									<input type="number" value="5" class="valoresPericias">
+									<input type="number" value="5" class="valoresPericias">
+									<input type="number" value="4" class="valoresPericias">
+									<input type="number" value="5" class="valoresPericias">
+									<input type="number" value="3" class="valoresPericias">
+									<input type="number" value="1" class="valoresPericias">						
+								</div>
+							</div>
+								<div id="periciasBloco2">
+									<span class="nomesPericias">Culinária</span>
+									<span class="nomesPericias">História</span>
+									<span class="nomesPericias">Usar biblioteca</span>
+									<span class="nomesPericias">Arcano</span>
+									<span class="nomesPericias">Operar Maquinário</span>
+									<span class="nomesPericias">Charme</span>
+									<span class="nomesPericias">Intimidação</span>
+									<span class="nomesPericias">Lábia</span>
+									<span class="nomesPericias">Persuação</span>
+									<span class="nomesPericias">Prestidigitação</span>
+									<span class="nomesPericias">Negociação</span>
+									<span class="nomesPericias">Língua</span>
+									<span class="nomesPericias">Navegação</span>
+									<span class="nomesPericias">Meditação</span>
+									<span class="nomesPericias">Primeiro Socorros</span>
 
-						
-				 </div>
+									<div id="numerosBloco2">
+										<input type="number" value="2" class="valoresPericias">
+										<input type="number" value="1" class="valoresPericias">
+										<input type="number" value="12" class="valoresPericias">
+										<input type="number" value="11" class="valoresPericias">
+										<input type="number" value="20" class="valoresPericias"> <span class="textoVantagem" id="vantagemOPR">(vantagem)</span>
+										<input type="number" value="7" class="valoresPericias">
+										<input type="number" value="10" class="valoresPericias">
+										<input type="number" value="2" class="valoresPericias">
+										<input type="number" value="13" class="valoresPericias">
+										<input type="number" value="12" class="valoresPericias">
+										<input type="number" value="2" class="valoresPericias">
+										<input type="number" value="15" class="valoresPericias">
+										<input type="number" value="2" class="valoresPericias">
+										<input type="number" value="1" class="valoresPericias">
+										<input type="number" value="8" class="valoresPericias">
+									</div>
+				 				</div>
+				</div>
+					<div id="feiticos" class="camposAoLado">
+						<h4 class="titulos titulosAoLado">Feitiços</h4>
 
+					</div>
 
 		</div>
-	</div>
+</div>
 </body>
 </html>
