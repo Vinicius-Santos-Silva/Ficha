@@ -63,7 +63,7 @@
 	#ficha{
 		max-width: 1000px;
 		min-width: 950px;
-		height: 1600px;
+		height: 1665px;
 		background-color: rgb(255, 255, 255, 0.88);
 		border-radius: 3px;
 	}
@@ -96,22 +96,36 @@
 	}
 	#caixaBarras span{
 		font-size: 18px;
-		padding: 3px;
 	}
-	#qtdeVida, #qtdeMana{
+	#qtdeVida{
 		position: relative;
-		top: 20px;
+		top: 21px;
 		left: 70px;
 	}
 	#qtdeSanidade{
 		position: relative;
-		top: 20px;
+		top: 21px;
 		left: 34px;
 	}
 	#estadosSanidade{
 		position: relative;
 		left: 34px;
 	}
+	#qtdeMana{
+		position: relative;
+		top: 21px;
+		left: 65px;
+	}
+	#pontosEsforco{
+		display: inline-block;
+		padding-top: 20px;
+	}
+	#qtdePE{
+		position: relative;
+		top: 21px;
+		left:-38px;
+	}
+
 
 	#vida::-webkit-progress-value{
 		background-color: rgb(230, 59, 59);
@@ -124,7 +138,9 @@
 	#mana::-webkit-progress-value{
 		background-color:rgb(59, 73, 230)
 	}  #mana::-moz-progress-bar{ background-color: rgb(59, 73, 230);}
-	
+	#PE::-webkit-progress-value{
+		background-color: yellow;
+	} #PE::-moz-progress-bar{ background-color: yellow;}
 	.barras{
 		width: 300px;
 		height: 20px;
@@ -487,6 +503,7 @@
 		position: absolute;
 		left: 120px;
 		top: 0;
+		
 	}
 	#periciasVantagem1{
 		top: 20px;
@@ -496,8 +513,9 @@
 		width: 180px;
 		position: relative;
 		float:right;
-		top: -322px;
+		top: -315px;
 		left: -90px;
+
 	}
 	#numerosBloco2{
 		width: 20px;
@@ -538,6 +556,28 @@
 	#feiticos{
 		margin-top: 20px;
 		left: -50px;
+		color: #FFF;
+	}
+	
+	#caixaFeiticos{
+		padding-left: 15px;
+		padding-right: 15px;
+		overflow: auto;
+		height: 560px;
+	}
+	#caixaFeiticos span{
+		display: block;
+		text-align: justify;
+		padding-bottom: 6px;
+	}
+	#posturaCombate{
+		margin: 0;
+	}
+
+	.feiticosRaca{
+		margin: 0;
+		font-size: 18px;
+		padding-bottom: 2px;
 	}
 	
 </style>
@@ -586,6 +626,10 @@
 					<span>Mana</span> 
 					<span id="qtdeMana">61 / 61</span>
 					<progress max="61" value="61" id="mana" class="barras"></progress>
+
+					<span id="pontosEsforco">Pontos de Esforço</span>
+					<span id="qtdePE"> 00 / 00</span>
+					<progress max="100" value="100" id="PE" class="barras"></progress>
 				</div>
 				
 					<div id="caixaArmas" class="camposEmBaixo">
@@ -695,11 +739,11 @@
 										</div>
 			<div id="caixaDeRiquezas">								
 				<img src="./Assests/Moeda.png" alt="moedas" >
-				<input type="number" value="20" class="numeros">
+				<input type="number" value="00" class="numeros">
 				<img src="./Assests/rubiQuadrado.png" alt="Rubi"  class="itensParaCompras">
-				<input type="number" value="10" class="numeros">
+				<input type="number" value="00" class="numeros">
 					<img src="./Assests/PedraFusao1.png" alt="Pedras de Fusão">
-					<input type="number" value="1" class="numeros">	
+					<input type="number" value="00" class="numeros">	
 			</div>	
 
 			<div id="dadosPessoais" class="camposAoLado">
@@ -745,9 +789,9 @@
 						substituir testes de Força por Destreza na maioria dos Casos.</span>
 
 						<span><strong>Sorte Salvadora:</strong>  Quando faz um teste de perícias, atributos, ataques, resistências 
-						e reações, você pode gastar 1 de Mana para rolar os testes novamente em até 4 vezes na sessão.</span>
+						e reações, você pode gastar 1 de Mana para rolar os testes novamente em até 3 vezes na sessão.</span>
 
-						<span><strong>Descanso Natural:</strong> No fim da sessão seu personagem recupera 3d6+4 de Vida e 3d6+4 de Mana e 3d6+4 de Sanidade.</span>
+						<span><strong>Descanso Natural:</strong> No fim da sessão seu personagem recupera 3d6 de Vida, 3d6 de PM e PE e 2d6 de Sanidade.</span>
 						<span><strong>Pergaminho:</strong> Recebe 1 feitiço de 3 Raças a sua escolha</span>
 					</div>
 			   </div>
@@ -800,7 +844,7 @@
 									<span class="nomesPericias">Lábia</span>
 									<span class="nomesPericias">Persuação</span>
 									<span class="nomesPericias">Prestidigitação</span>
-									<span class="nomesPericias">Negociação</span>
+									<span class="nomesPericias">Ciência</span>
 									<span class="nomesPericias">Língua</span>
 									<span class="nomesPericias">Navegação</span>
 									<span class="nomesPericias">Meditação</span>
@@ -826,8 +870,38 @@
 				 				</div>
 				</div>
 					<div id="feiticos" class="camposAoLado">
-						<h4 class="titulos titulosAoLado">Feitiços</h4>
+					 <h4 class="titulos titulosAoLado">Feitiços</h4>
+						<div id="caixaFeiticos">
+						  <h5 class="feiticosRaca">Feitiços da Raça:</h5>
+							<span><strong>Pequeno Gigante (6 de Mana):</strong> Uma energia ancestral toma seu corpo aparecendo uma criatura acima de seu corpo representando sua força em 300%, por 4 rodadas  você terá vantagem no ataque e reações.
+							Além disso seus ataques passam a dar dano de essência e recebe +4d11 de dano de essência para sua arma principal. (Ação de Movimento) RARA</span>
+								
+							<span><strong>Atravessar (3 de Mana):</strong> Ao gastar uma ação livre, você consegue atravessar seu inimigo como uma energia antiga misteriosa, recebendo 6d4 em Cura. COMUM</span>
+							
+							<span><strong>Escolhido pelo Hano (Atributo):</strong> Recebe vantagem em testes de Destino, e além disso role 1d8 para receber +2 em algum desses atributos. ÉPICA</span>
+						  <h5 class="feiticosRaca">Outros Feitiços:</h5>
+							<span><strong>Rook (5 de Mana):</strong> Consegue lançar uma corda mágica verde na direção do alvo,
+							se acertá-lo, puxa ele imediatamente para você, dano do acerto 1d10(Ação de Movimento). RARA</span>
+							
+							<span><strong>Posturas de Combate:</strong> Assumir uma postura gasta uma ação de movimento e 2 PM(Ponto Mana) e não pode ter
+								duas ou mais posturas ao mesmo tempo.<br/><strong>Posturas de Combate:</strong></span>
+							<span><strong>Aríete Implacável:</strong> Ao assumir esta postura, você recebe +1 Vantagem no Ataque. E pode adicionar +4 pontos de Mana para receber +1 Vantagem.</span>
+							<span><strong>Castigo de Ferro:</strong> Sempre que seus aliados próximos sofrerem um ataque corpo a corpo, você pode gastar 1 ponto de mana para fazer um ataque na criatura que o atacou como 
+							uma reação. Além disso, qualquer tipo de Defesa/Resistência/Armadura que você tiver no combate recebe +20 como bônus, após ativar esta postura.</span>
+							<span><strong>Foco de Batalha:</strong> Sempre que um inimigo ataca, você recebe 10 pontos de Mana temporários. Pontos de mana temporários desaparecem no final da cena.</span>
+							<span><strong>Muralha Intransponível:</strong>Para assumir esta postura você precisa estar empunhando um escudo. Você recebe +30 na Armadura e Vantagem em Bloqueio. Além disso, quando sofre um ataque que permite um teste de 
+							Reflexos para reduzir o dano à metade, não sofre nenhum dano se passar. Para cada 2 pontos de mana adicionais que gastar quando assumir a postura, aumenta esse bônus em a armadura em +5. Por fim, enquanto mantiver esta postura, seu deslocamento é reduzido para 3m.</span>
+							<span><strong>Provocação Petulante:</strong> Enquanto esta postura estiver ativa, todos os inimigos que iniciarem seus turnos dentro de seu alcance curto devem fazer um teste de Presença (Dt Extremo). Se falharem, devem atacar você nessa rodada</span>
+							<span><strong>Torre Inabalável:</strong> Você assume uma postura defensiva que o torna imune a qualquer tentativa de tirá-lo do lugar, de forma mundana ou mágica. Enquanto mantiver a postura, você não pode se deslocar, mas recebe um bônus na Defesa igual a seu extremo da Constituição
+							 e Tamanho + o dobro da atual.</span>
 
+						  <h5 class="feiticosRaca">Feitiços de Atributos:</h5>
+							<span><strong>Sarah Alopay (Loxodon):</strong> Recebe vantagem em 2 reações a sua
+							escolha.RARA </span>
+							<span><strong>Rarath (Raktar):</strong>Recebe +1 em Tamanho e Constituição e +100 na Vida Máxima
+							e Atual.RARA</span>
+						
+						</div>
 					</div>
 
 		</div>
