@@ -492,78 +492,31 @@
 		color: #FFFF;
 		height: 360px;
 	}
-	#paiPericias{
-		width: 100%;
-		max-width: 540px;
-		max-height: 330px;
-	
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -47%);
-		background-color: blue;
-	}
 	#periciasBloco1{
 		width: 140px;
-		margin-left: 20px;
-		background-color: green;
+		margin-left: 30px;
 		float: left;
-	}
-	#numerosBloco1{
-		max-width: 20px;
-		text-align: center;
 		padding: 1px;
-		background-color: red;
-		float: left;
 	}
 	#periciasBloco2{
 		width: 160px;
-		background-color: violet;
+		margin-left: 98px;
 		float: left;
+		padding: 1px;
 	}
-	#numerosBloco2{
+
+	.numerosBlocos{
 		max-width: 20px;
 		text-align: center;
-		background-color: yellow;
+		padding: 1px;
 		float: left;
 	}
-		
-/*	}
-	#periciasBloco1{
-		width: 100px;
-		position: relative;
-		left: 18px;
-	}
-	#numerosBloco1{
-		width: 20px;
+	.vantagemPericias{
 		position: absolute;
-		left: 120px;
-		top: 0;
-		
+		margin-top: -18px;
+		margin-left: 25px;
+		font-size: 12px;
 	}
-	#periciasVantagem1{
-		top: 20px;
-	}
-
-	#periciasBloco2{
-		width: 180px;
-		position: relative;
-		float:right;
-		top: -315px;
-		left: -90px;
-
-	}
-	#numerosBloco2{
-		width: 20px;
-		position: absolute;
-		left: 160px;
-		top: 0;
-	}
-	#vantagemOPR{
-		top:85px;
-	}
-*/
-
 	.valoresPericias{
 		width: 20px;
 		font-size: 16px;
@@ -573,14 +526,6 @@
 		border: none;
 		text-align: center;
 		padding-bottom: 2px;
-	}
-	.textoVantagem{
-		font-size: 15px ;
-		padding-left: 10px;
-		float: right;
-		position: absolute;
-		left: 20px;
-		top: 0;
 	}
 	.nomesPericias{
 		display: block;
@@ -833,9 +778,6 @@
 			   </div>
 			   	 <div class="camposAoLado" id="pericias">
 					<h4 class="titulos titulosAoLado">Perícias</h4>
-					<!--Tentar substituir  os campos de números por input number, pois será necessário no React para torna-lá interativa-->
-						
-					<div id="paiPericias">
 						<div id="periciasBloco1">
 								<span class="nomesPericias">Destreza</span>
 								<span class="nomesPericias">Lutar/Briga</span>
@@ -853,9 +795,11 @@
 								<span class="nomesPericias">Adestramento</span>
 								<span class="nomesPericias">Arte e oficio</span>
 							</div>
-								<div id="numerosBloco1">
-									<input type="number" value="20" class="valoresPericias"><span class="textoVantagem">(vantagem)</span>
-									<input type="number" value="21" class="valoresPericias"><span class="textoVantagem" id="periciasVantagem1">(vantagem)</span>
+								<div id="numerosBloco1" class="numerosBlocos">
+									<input type="number" value="20" class="valoresPericias">
+									<span class="vantagemPericias">(Vantagem)</span>
+									<input type="number" value="21" class="valoresPericias">
+									<span class="vantagemPericias">(Vantagem)</span>
 									<input type="number" value="10" class="valoresPericias">
 									<input type="number" value="10" class="valoresPericias">
 									<input type="number" value="10" class="valoresPericias">
@@ -887,12 +831,13 @@
 									<span class="nomesPericias">Meditação</span>
 									<span class="nomesPericias">Primeiro Socorros</span>
 				 				</div>
-								 <div id="numerosBloco2">
+								 <div id="numerosBloco2" class="numerosBlocos">
 									<input type="number" value="2" class="valoresPericias">
 									<input type="number" value="1" class="valoresPericias">
 									<input type="number" value="12" class="valoresPericias">
 									<input type="number" value="11" class="valoresPericias">
-									<input type="number" value="20" class="valoresPericias"> <span class="textoVantagem" id="vantagemOPR">(vantagem)</span>
+									<input type="number" value="20" class="valoresPericias"> 
+									<span class="vantagemPericias">(Vantagem)</span>
 									<input type="number" value="7" class="valoresPericias">
 									<input type="number" value="10" class="valoresPericias">
 									<input type="number" value="2" class="valoresPericias">
@@ -904,7 +849,7 @@
 									<input type="number" value="1" class="valoresPericias">
 									<input type="number" value="8" class="valoresPericias">
 								</div>
-					</div>
+					
 							
 				</div>
 					<div id="feiticos" class="camposAoLado">
