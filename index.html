@@ -468,7 +468,7 @@
 
 /*		Propriedades da Raça	*/
 	#propriedadesRaca{
-		height: 230px;
+		height: 240px;
 		max-height: 250px;
 		position: relative;
 		left: -50px;
@@ -492,6 +492,43 @@
 		color: #FFFF;
 		height: 360px;
 	}
+	#paiPericias{
+		width: 100%;
+		max-width: 540px;
+		max-height: 330px;
+	
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -47%);
+		background-color: blue;
+	}
+	#periciasBloco1{
+		width: 140px;
+		margin-left: 20px;
+		background-color: green;
+		float: left;
+	}
+	#numerosBloco1{
+		max-width: 20px;
+		text-align: center;
+		padding: 1px;
+		background-color: red;
+		float: left;
+	}
+	#periciasBloco2{
+		width: 160px;
+		background-color: violet;
+		float: left;
+	}
+	#numerosBloco2{
+		max-width: 20px;
+		text-align: center;
+		background-color: yellow;
+		float: left;
+	}
+		
+/*	}
 	#periciasBloco1{
 		width: 100px;
 		position: relative;
@@ -499,7 +536,6 @@
 	}
 	#numerosBloco1{
 		width: 20px;
-		float: right;
 		position: absolute;
 		left: 120px;
 		top: 0;
@@ -526,7 +562,7 @@
 	#vantagemOPR{
 		top:85px;
 	}
-
+*/
 
 	.valoresPericias{
 		width: 20px;
@@ -563,7 +599,7 @@
 		padding-left: 15px;
 		padding-right: 15px;
 		overflow: auto;
-		height: 560px;
+		height: 550px;
 	}
 	#caixaFeiticos span{
 		display: block;
@@ -792,13 +828,15 @@
 						e reações, você pode gastar 1 de Mana para rolar os testes novamente em até 3 vezes na sessão.</span>
 
 						<span><strong>Descanso Natural:</strong> No fim da sessão seu personagem recupera 3d6 de Vida, 3d6 de PM e PE e 2d6 de Sanidade.</span>
-						<span><strong>Pergaminho:</strong> Recebe 1 feitiço de 3 Raças a sua escolha</span>
+						<span><strong>Pergaminho:</strong> Recebe 3 feitiços sendo COMUM ou RARO e dentro de sua classe, Pontos de Esforço (PE) ou Pontos de Mana (PM)</span>
 					</div>
 			   </div>
 			   	 <div class="camposAoLado" id="pericias">
 					<h4 class="titulos titulosAoLado">Perícias</h4>
 					<!--Tentar substituir  os campos de números por input number, pois será necessário no React para torna-lá interativa-->
-							<div id="periciasBloco1">
+						
+					<div id="paiPericias">
+						<div id="periciasBloco1">
 								<span class="nomesPericias">Destreza</span>
 								<span class="nomesPericias">Lutar/Briga</span>
 								<span class="nomesPericias">Atirar</span>
@@ -814,7 +852,7 @@
 								<span class="nomesPericias">Arremessar</span>
 								<span class="nomesPericias">Adestramento</span>
 								<span class="nomesPericias">Arte e oficio</span>
-								
+							</div>
 								<div id="numerosBloco1">
 									<input type="number" value="20" class="valoresPericias"><span class="textoVantagem">(vantagem)</span>
 									<input type="number" value="21" class="valoresPericias"><span class="textoVantagem" id="periciasVantagem1">(vantagem)</span>
@@ -832,9 +870,8 @@
 									<input type="number" value="3" class="valoresPericias">
 									<input type="number" value="1" class="valoresPericias">						
 								</div>
-							</div>
-								<div id="periciasBloco2">
-									<span class="nomesPericias">Culinária</span>
+							<div id="periciasBloco2">
+								<span class="nomesPericias">Culinária</span>
 									<span class="nomesPericias">História</span>
 									<span class="nomesPericias">Usar biblioteca</span>
 									<span class="nomesPericias">Arcano</span>
@@ -849,25 +886,26 @@
 									<span class="nomesPericias">Navegação</span>
 									<span class="nomesPericias">Meditação</span>
 									<span class="nomesPericias">Primeiro Socorros</span>
-
-									<div id="numerosBloco2">
-										<input type="number" value="2" class="valoresPericias">
-										<input type="number" value="1" class="valoresPericias">
-										<input type="number" value="12" class="valoresPericias">
-										<input type="number" value="11" class="valoresPericias">
-										<input type="number" value="20" class="valoresPericias"> <span class="textoVantagem" id="vantagemOPR">(vantagem)</span>
-										<input type="number" value="7" class="valoresPericias">
-										<input type="number" value="10" class="valoresPericias">
-										<input type="number" value="2" class="valoresPericias">
-										<input type="number" value="13" class="valoresPericias">
-										<input type="number" value="12" class="valoresPericias">
-										<input type="number" value="2" class="valoresPericias">
-										<input type="number" value="15" class="valoresPericias">
-										<input type="number" value="2" class="valoresPericias">
-										<input type="number" value="1" class="valoresPericias">
-										<input type="number" value="8" class="valoresPericias">
-									</div>
 				 				</div>
+								 <div id="numerosBloco2">
+									<input type="number" value="2" class="valoresPericias">
+									<input type="number" value="1" class="valoresPericias">
+									<input type="number" value="12" class="valoresPericias">
+									<input type="number" value="11" class="valoresPericias">
+									<input type="number" value="20" class="valoresPericias"> <span class="textoVantagem" id="vantagemOPR">(vantagem)</span>
+									<input type="number" value="7" class="valoresPericias">
+									<input type="number" value="10" class="valoresPericias">
+									<input type="number" value="2" class="valoresPericias">
+									<input type="number" value="13" class="valoresPericias">
+									<input type="number" value="12" class="valoresPericias">
+									<input type="number" value="2" class="valoresPericias">
+									<input type="number" value="15" class="valoresPericias">
+									<input type="number" value="2" class="valoresPericias">
+									<input type="number" value="1" class="valoresPericias">
+									<input type="number" value="8" class="valoresPericias">
+								</div>
+					</div>
+							
 				</div>
 					<div id="feiticos" class="camposAoLado">
 					 <h4 class="titulos titulosAoLado">Feitiços</h4>
