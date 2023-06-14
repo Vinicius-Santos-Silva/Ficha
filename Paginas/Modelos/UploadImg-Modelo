@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Visualizador de Imagem</title>
+  <style>
+    #imagem-preview {
+      max-width: 300px;
+      max-height: 300px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Visualizador de Imagem</h1>
+  
+  <input type="file" id="imagem-input" accept="image/*">
+  <br>
+  <img id="imagem-preview" src="#" alt="Imagem Preview">
+
+  <script>
+    const imagemInput = document.getElementById('imagem-input');
+    const imagemPreview = document.getElementById('imagem-preview');
+
+    imagemInput.addEventListener('change', function(e) {
+      const arquivo = imagemInput.files[0];
+      const leitor = new FileReader();
+
+      leitor.onload = function(e) {
+        imagemPreview.src = e.target.result;
+      }
+
+      leitor.readAsDataURL(arquivo);
+    });
+  </script>
+</body>
+</html>

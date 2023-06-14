@@ -6,6 +6,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
 <style>
+	*{
+		margin: 0;
+		padding: 0;
+		font-family: sans-serif;
+	}
 	body{
 		margin: 0;
 		padding: 0;
@@ -13,7 +18,6 @@
 		background-repeat: no-repeat;
 		background-size: cover;
 		background-position: center center;
-		
 	}
 
 /*	 */	
@@ -23,6 +27,7 @@
 		position: relative;
 		left: 10%;
 		margin-top: 30px;
+	
 	}
 
 /*		Botão de voltar para Ficha*/
@@ -37,7 +42,7 @@
 		position: relative;
 		left: 70%;
 	}
-	#fichaPerson{
+	#fichaPersonImg{
 		width:40px;
 		height: 40px;
 		display: block;
@@ -45,17 +50,17 @@
 		position: relative;
 		top: 2px;
 	}
-	#voltarFicha{
+	#voltarFichaTxt{
 		display: none;
 		color: rgba(255, 255, 255, 0.632);
-		width: 178px;
+		width: 200px;
 		height: 26px;
 		position: relative;
 		left: 53px;
-		top: -53px;
+		top: -30px;
 		font-size: 20px;
 	}
-	#Voltar:hover #voltarFicha{
+	#Voltar:hover #voltarFichaTxt{
 		display: block;
 	}
 
@@ -85,19 +90,76 @@
 		background-color: rgb(83, 83, 83,0.90);
 		border-radius: 3px;
 		position: relative;
-		left: 40px;
 		top: 10px;
-		margin-top: 5px;
+		left: 40px;
 	}
+	#caixaInvt{
+		width: 100%;
+		max-width: 910px;
+		height: 800px;
+		/* background-color: rgba(114, 184, 114, 0.712); */
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+	
+
+/* Campos que aparecerão clicar na imagem */
+	#colar:target{
+		display: block;
+	}
+	#add:target{
+		display: block;
+	}
+	.ApareceDiv{
+		display: none;
+		width:200px;
+		height: 200px;
+		background-color: rgb(199, 199, 199);
+		border-radius: 4px;
+		position: absolute;
+		top: 10px;
+		left: 80px;
+		font-size: 20px;
+		padding-bottom: 10px;
+	}
+	.descriçãoItem{
+		font-size: 18px;
+		text-align: justify;
+	}
+
+
+	.txtSair{
+		width: 100px;
+		text-decoration: none;
+		color: black;
+		float:inline-end;
+		font-size: 14px;	
+	}
+
+	
 	.slots{
 		width: 70px;
 		height: 70px;
-		background-color: rgb(255, 250, 250);
-		border-radius: 4px;
-		border: 0.90px solid black;
+		background-color: #fff;
+		border-radius: 3px;
+		border: 1px solid rgb(14, 13, 13);
+		margin-top: 10px;
+		padding: 1px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
-
-
+	.slots img{
+		width: 60px;
+		height: 60px;
+		cursor: pointer;
+	}
+	.linhas{
+		display: flex;
+		justify-content: space-around;
+	}
 	
 </style>
 	</head>
@@ -109,20 +171,62 @@
 	
 	<div id="Voltar">
 		<a href="../index.html" rel="ficha">
-			<img src="../Assests/Jorge.jpg" alt="Personagem" id="fichaPerson">
+			<img src="../Assests/Jorge.jpg" alt="Personagem" id="fichaPersonImg">
 		</a>
-			<div id="voltarFicha">
+			<div id="voltarFichaTxt">
 				<h3>Voltar para Ficha</h3>
 			</div>
 
 	</div>
 	
-		<div id="inventario">
-				<strong id="teste">Inventário</strong>
-			<div id="AreaInvt">
-				<span>Armas</span>
-			</div>	
-
+	<div id="inventario">
+	  <strong>Inventário</strong>
+		<div id="AreaInvt">
+		 <div id="caixaInvt">
+			<div class="linhas">
+				<div class="slots">
+					<a href="#colar" ><img src="../Assests/Colar.jpeg" alt="colar"> </a>
+				 <div id="colar" class="ApareceDiv"> 
+						<h5>Colar de Kairos</h5>
+						<div>
+						  <span class="descriçãoItem">"6 mãos e 6 Atributos heheeh"</span>
+							<h5>Propriedades:</h5>
+						   <span>Recebe +1 em 6 Atributos a sua escolha e recebe 20 de Armadura Divina.</span>
+						</div>
+						<a href="#" class="txtSair">Fechar</a>
+				 </div>
+				</div>
+						
+				<div class="slots" id="slot1"></div>
+				<div class="slots" id="slot1"></div>
+				<div class="slots" id="slot1"></div>
+				<div class="slots" id="slot1"></div>
+				<div class="slots" id="slot1"></div>
+				<div class="slots" id="slot1"></div>
+				<div class="slots" id="slot1"></div>
+				<div class="slots" id="slot1"></div>
+				<div class="slots" id="slot1"></div>
+				<div class="slots" id="slot1"></div>
+			</div>
+			 <div class="linhas">
+				<div class="slots">
+					<a href="#add"><img src="../Assests/add.png" alt="adicionar"></a>
+					<div id="add"class="ApareceDiv">
+						<a href="#" class="txtSair">Fechar</a>
+					</div>
+				</div>
+				<div class="slots"><span></span></div>
+				<div class="slots"><span></span></div>
+				<div class="slots"><span></span></div>
+				<div class="slots"><span></span></div>
+				<div class="slots"><span></span></div>
+				<div class="slots"><span></span></div>
+				<div class="slots"><span></span></div>
+				<div class="slots"><span></span></div>
+				<div class="slots"><span></span></div>
+				<div class="slots"><span></span></div>
+			 </div>
+		 </div>			
 		</div>
 
 	</div>
