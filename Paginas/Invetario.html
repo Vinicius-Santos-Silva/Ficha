@@ -95,30 +95,28 @@
 		width: 100%;
 		max-width: 910px;
 		height: 800px;
-		/* background-color: rgba(114, 184, 114, 0.712); */
 		position: absolute;
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
 	}
 
-	
 	.slots{
 		width: 70px;
 		height: 70px;
+		margin-top: 10px;
+		padding: 1px;
 		background-color: #fff;
 		border-radius: 3px;
 		border: 1px solid rgb(14, 13, 13);
-		margin-top: 10px;
-		padding: 1px;
-		display: flex;
-		justify-content: center;
-		align-items: center;
 	}
 	.slots img{
 		width: 60px;
 		height: 60px;
 		cursor: pointer;
+		display: block;
+		margin: 0px auto;
+		margin-top: 3px;
 	}
 	.linhas{
 		display: flex;
@@ -132,55 +130,67 @@
 	#colar:target{
 		display: block;
 	}
+	#colar{
+		left: 80px;
+		height: 200px;
+	}	
 	#add:target{
 		display: block;
 	}
+	#luva:target{
+		display: block;
+	}
+	#luva{
+		left: 162px;
+		height: 300px;
+	}
 
 
-	.ApareceDiv{
+
+	.divOculta{
 		display: none;
-		width:200px;
-		height: 190px;
-		background-color: rgba(199, 199, 199, 0.925);
-		border-radius: 4px;
+	}
+
+	.estiloDaDivOculta{
 		position: absolute;
 		top: 10px;
-		left: 80px;
-		text-align: justify;
 	}
-	.ApareceDiv div{
-		width: 100%;
-		max-width: 180px;
-		max-height: 190px;
-		margin-top: 10px;
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%,-50%);
+	
+	.estiloDaDivOculta div{
+		width: 200px;
+		background-color:  rgba(204, 203, 203, 0.959);
+		border-radius: 4px;
+	}
+	.conteudo{
+		display: block;
+		text-align: center;
+		padding-bottom: 6px;
+	}
+	.descricao{
+		display: flex;
+		text-align: justify;
+		padding-left: 4px;
+		padding-right: 4px;
 	}
 	.nomeItem{
 		text-align: center;
 		font-size: 18px;
-		padding-bottom: 4px;
-		padding-top: 4px;
-	}
-	.propriedadesItem{
-		font-size: 16px;
-		text-align: center;
+		padding-top: 3px;
 		padding-bottom: 3px;
 	}
-	.txtSair{
-		text-decoration: none;
-		color: black;
-		float:inline-end;
-		font-size: 15px;	
+	.txtPropriedades{
+		text-align: center;
+		font-size: 14px;
+		padding-bottom: 3px;
+	}
+	.linkFechar{
 		display: block;
 		text-align: center;
+		text-decoration: none;
+		padding: 10px;
 	}
 
-	
 
-	
 </style>
 	</head>
 
@@ -199,44 +209,210 @@
 
 	</div>
 	
-	<div id="inventario">
-	  <h4  class="titulo">Inventário</h4>
-		<div id="AreaInvt">
-		 <div id="caixaInvt">
+<div id="inventario">
+	<h4  class="titulo">Inventário</h4>
+	<div id="AreaInvt">
+		<div id="caixaInvt">
 			<div class="linhas">
 				<div id="slot1"class="slots">
-					<a href="#colar" ><img src="../Assests/Colar.jpeg" alt="colar"> </a>
-				 <!--Div que ira aparecer ao clicar no item ou no slot vazio-->
-					<div id="colar" class="ApareceDiv"> 
+				  <a href="#colar" >
+					<img src="../Assests/Colar.jpeg" alt="colar">
+				  </a>
+				  <div id="colar" class="divOculta estiloDaDivOculta">
+					<div class="camposOcultos">	
 						<h5 class="nomeItem">Colar de Kairos</h5>
-						<div>
-						  <span> "6 mãos e 6 Atributos heheeh" </span>
-							<h5 class="propriedadesItem">Propriedades</h5>
-						    <span>Recebe +1 em 6 Atributos a sua escolha e recebe 20 de Armadura Divina.</span>
-							<a href="#" class="txtSair">Fechar</a>
-						</div>	
+	
+						<span class="conteudo">"6 mãos e 6 Atributos heheeh"</span>
+							<h6 class="txtPropriedades">Propriedades</h6>
+						<span class="descricao">Recebe +1 em 6 Atributos a sua escolha e recebe 20 de Armadura Divina.</span>
+						
+						<a href="#" class="linkFechar">Fechar</a>
+					</div>
+				  </div>
+				</div>
+
+				<div id="slot"class="slots">
+					<a href="#luva" >
+					  <img src="../Assests/luva.jpeg" alt="luva">
+					</a>
+					<div id="luva" class="divOculta estiloDaDivOculta">
+					  <div class="camposOcultos">	
+						  <h5 class="nomeItem">Luvas do céu</h5>
+	  
+						  <span class="conteudo">"Se torne imortal"</span>
+							  <h6 class="txtPropriedades">Propriedades</h6>
+						  <span class="descricao">Quando estiver com as luvas equipadas, suas armas causa +2d de dano do
+						  mesmo tipo e para cada acerto você se cura em 3d8.
+						  </span>
+						  	<a href="#" class="linkFechar">Fechar</a>
+					  </div>
 					</div>
 				</div>
+				
+				  <div id="slot"class="slots">
+				  <a href="#add" >
+					<img src="../Assests/add.png" alt="adicionar">
+				  </a>
+				  <div id="add" class="divOculta estiloDaDivOculta">
+					<div class="camposOcultos">	
+						<h5 class="nomeItem">Adicionar Item</h5>
+	
+						<span class="conteudo">""</span>
+							<h6 class="txtPropriedades">Propriedades</h6>
+						<span class="descricao">Recebe +1 em 6 Atributos a sua escolha e recebe 20 de Armadura Divina.</span>
 						
-				<div class="slots" id="slot"></div>
-				<div class="slots" id="slot"></div>
-				<div class="slots" id="slot"></div>
-				<div class="slots" id="slot"></div>
-				<div class="slots" id="slot"></div>
-				<div class="slots" id="slot"></div>
-				<div class="slots" id="slot"></div>
-				<div class="slots" id="slot"></div>
-				<div class="slots" id="slot"></div>
-				<div class="slots" id="slot"></div>
+						<a href="#" class="linkFechar">Fechar</a>
+					</div>
+				  </div>
+
+				</div>
+				<div id="slot"class="slots">
+				  <a href="#add" >
+					<img src="../Assests/add.png" alt="adicionar">
+				  </a>
+				  <div id="add" class="divOculta estiloDaDivOculta">
+					<div class="camposOcultos">	
+						<h5 class="nomeItem">Adicionar Item</h5>
+	
+						<span class="conteudo">"6 mãos e 6 Atributos heheeh"</span>
+							<h6 class="txtPropriedades">Propriedades</h6>
+						<span class="descricao">Recebe +1 em 6 Atributos a sua escolha e recebe 20 de Armadura Divina.</span>
+						
+						<a href="#" class="linkFechar">Fechar</a>
+					</div>
+				  </div>
+
+				</div>
+				<div id="slot"class="slots">
+				  <a href="#add" >
+					<img src="../Assests/add.png" alt="adicionar">
+				  </a>
+				  <div id="add" class="divOculta estiloDaDivOculta">
+					<div class="camposOcultos">	
+						<h5 class="nomeItem">Adicionar Item</h5>
+	
+						<span class="conteudo">"6 mãos e 6 Atributos heheeh"</span>
+							<h6 class="txtPropriedades">Propriedades</h6>
+						<span class="descricao">Recebe +1 em 6 Atributos a sua escolha e recebe 20 de Armadura Divina.</span>
+						
+						<a href="#" class="linkFechar">Fechar</a>
+					</div>
+				  </div>
+
+				</div>
+
+				<div id="slot"class="slots">
+				  <a href="#add" >
+					<img src="../Assests/add.png" alt="adicionar">
+				  </a>
+				  <div id="add" class="divOculta estiloDaDivOculta">
+					<div class="camposOcultos">	
+						<h5 class="nomeItem">Adicionar Item</h5>
+	
+						<span class="conteudo">"6 mãos e 6 Atributos heheeh"</span>
+							<h6 class="txtPropriedades">Propriedades</h6>
+						<span class="descricao">Recebe +1 em 6 Atributos a sua escolha e recebe 20 de Armadura Divina.</span>
+						
+						<a href="#" class="linkFechar">Fechar</a>
+					</div>
+				  </div>
+
+				</div>
+				<div id="slot"class="slots">
+				  <a href="#add" >
+					<img src="../Assests/add.png" alt="adicionar">
+				  </a>
+				  <div id="add" class="divOculta estiloDaDivOculta">
+					<div class="camposOcultos">	
+						<h5 class="nomeItem">Adicionar Item</h5>
+	
+						<span class="conteudo">"6 mãos e 6 Atributos heheeh"</span>
+							<h6 class="txtPropriedades">Propriedades</h6>
+						<span class="descricao">Recebe +1 em 6 Atributos a sua escolha e recebe 20 de Armadura Divina.</span>
+						
+						<a href="#" class="linkFechar">Fechar</a>
+					</div>
+				  </div>
+
+				</div>
+				<div id="slot"class="slots">
+				  <a href="#add" >
+					<img src="../Assests/add.png" alt="adicionar">
+				  </a>
+				  <div id="add" class="divOculta estiloDaDivOculta">
+					<div class="camposOcultos">	
+						<h5 class="nomeItem">Adicionar Item</h5>
+	
+						<span class="conteudo">"6 mãos e 6 Atributos heheeh"</span>
+							<h6 class="txtPropriedades">Propriedades</h6>
+						<span class="descricao">Recebe +1 em 6 Atributos a sua escolha e recebe 20 de Armadura Divina.</span>
+						
+						<a href="#" class="linkFechar">Fechar</a>
+					</div>
+				  </div>
+
+				</div>
+				<div id="slot"class="slots">
+				  <a href="#add" >
+					<img src="../Assests/add.png" alt="adicionar">
+				  </a>
+				  <div id="add" class="divOculta estiloDaDivOculta">
+					<div class="camposOcultos">	
+						<h5 class="nomeItem">Adicionar Item</h5>
+	
+						<span class="conteudo">"6 mãos e 6 Atributos heheeh"</span>
+							<h6 class="txtPropriedades">Propriedades</h6>
+						<span class="descricao">Recebe +1 em 6 Atributos a sua escolha e recebe 20 de Armadura Divina.</span>
+						
+						<a href="#" class="linkFechar">Fechar</a>
+					</div>
+				  </div>
+
+				</div>
+				<div id="slot"class="slots">
+				  <a href="#add" >
+					<img src="../Assests/add.png" alt="adicionar">
+				  </a>
+				  <div id="add" class="divOculta estiloDaDivOculta">
+					<div class="camposOcultos">	
+						<h5 class="nomeItem">Adicionar Item</h5>
+	
+						<span class="conteudo">"6 mãos e 6 Atributos heheeh"</span>
+							<h6 class="txtPropriedades">Propriedades</h6>
+						<span class="descricao">Recebe +1 em 6 Atributos a sua escolha e recebe 20 de Armadura Divina.</span>
+						
+						<a href="#" class="linkFechar">Fechar</a>
+					</div>
+				  </div>
+
+				</div>
+				<div id="slot"class="slots">
+				  <a href="#add" >
+					<img src="../Assests/add.png" alt="adicionar">
+				  </a>
+				  <div id="add" class="divOculta estiloDaDivOculta">
+					<div class="camposOcultos">	
+						<h5 class="nomeItem">Adicionar Item</h5>
+	
+						<span class="conteudo">"6 mãos e 6 Atributos heheeh"</span>
+							<h6 class="txtPropriedades">Propriedades</h6>
+						<span class="descricao">Recebe +1 em 6 Atributos a sua escolha e recebe 20 de Armadura Divina.</span>
+						
+						<a href="#" class="linkFechar">Fechar</a>
+					</div>
+				  </div>
+
+				</div>
+				
+					
+				
+			
 				
 			</div>
+
 			 <div class="linhas">
-				<div class="slots">
-					<a href="#add"><img src="../Assests/add.png" alt="adicionar"></a>
-					<div id="add"class="ApareceDiv">
-						<a href="#" class="txtSair">Fechar</a>
-					</div>
-				</div>
+				
+				<div class="slots"><span></span></div>
 				<div class="slots"><span></span></div>
 				<div class="slots"><span></span></div>
 				<div class="slots"><span></span></div>
@@ -248,9 +424,9 @@
 				<div class="slots"><span></span></div>
 				<div class="slots"><span></span></div>
 			 </div>
-		 </div>			
-		</div>
-
+		</div>			
 	</div>
+
+</div>
 </body>
 </html>
