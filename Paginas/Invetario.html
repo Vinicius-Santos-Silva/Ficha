@@ -73,13 +73,11 @@
 		height: 900px;
 		background-color: rgb(255, 255, 255, 0.88) ;
 		border-radius: 3px;
-		text-align: center;
 	}
-	#inventario strong{
-		font-size: 30px;
-		position: relative;
-		top: 8px;
+	.titulo{
+		font-size: 26px;
 		text-align: center;
+		padding-top: 5px;
 	}
 
 	
@@ -90,7 +88,7 @@
 		background-color: rgb(83, 83, 83,0.90);
 		border-radius: 3px;
 		position: relative;
-		top: 10px;
+		top: 5px;
 		left: 40px;
 	}
 	#caixaInvt{
@@ -102,40 +100,6 @@
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
-	}
-	
-
-/* Campos que aparecerão clicar na imagem */
-	#colar:target{
-		display: block;
-	}
-	#add:target{
-		display: block;
-	}
-	.ApareceDiv{
-		display: none;
-		width:200px;
-		height: 200px;
-		background-color: rgb(199, 199, 199);
-		border-radius: 4px;
-		position: absolute;
-		top: 10px;
-		left: 80px;
-		font-size: 20px;
-		padding-bottom: 10px;
-	}
-	.descriçãoItem{
-		font-size: 18px;
-		text-align: justify;
-	}
-
-
-	.txtSair{
-		width: 100px;
-		text-decoration: none;
-		color: black;
-		float:inline-end;
-		font-size: 14px;	
 	}
 
 	
@@ -160,6 +124,62 @@
 		display: flex;
 		justify-content: space-around;
 	}
+
+
+	
+
+/* 	Campos que aparecerão clicar na imagem */
+	#colar:target{
+		display: block;
+	}
+	#add:target{
+		display: block;
+	}
+
+
+	.ApareceDiv{
+		display: none;
+		width:200px;
+		height: 190px;
+		background-color: rgba(199, 199, 199, 0.925);
+		border-radius: 4px;
+		position: absolute;
+		top: 10px;
+		left: 80px;
+		text-align: justify;
+	}
+	.ApareceDiv div{
+		width: 100%;
+		max-width: 180px;
+		max-height: 190px;
+		margin-top: 10px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+	}
+	.nomeItem{
+		text-align: center;
+		font-size: 18px;
+		padding-bottom: 4px;
+		padding-top: 4px;
+	}
+	.propriedadesItem{
+		font-size: 16px;
+		text-align: center;
+		padding-bottom: 3px;
+	}
+	.txtSair{
+		text-decoration: none;
+		color: black;
+		float:inline-end;
+		font-size: 15px;	
+		display: block;
+		text-align: center;
+	}
+
+	
+
 	
 </style>
 	</head>
@@ -180,33 +200,35 @@
 	</div>
 	
 	<div id="inventario">
-	  <strong>Inventário</strong>
+	  <h4  class="titulo">Inventário</h4>
 		<div id="AreaInvt">
 		 <div id="caixaInvt">
 			<div class="linhas">
-				<div class="slots">
+				<div id="slot1"class="slots">
 					<a href="#colar" ><img src="../Assests/Colar.jpeg" alt="colar"> </a>
-				 <div id="colar" class="ApareceDiv"> 
-						<h5>Colar de Kairos</h5>
+				 <!--Div que ira aparecer ao clicar no item ou no slot vazio-->
+					<div id="colar" class="ApareceDiv"> 
+						<h5 class="nomeItem">Colar de Kairos</h5>
 						<div>
-						  <span class="descriçãoItem">"6 mãos e 6 Atributos heheeh"</span>
-							<h5>Propriedades:</h5>
-						   <span>Recebe +1 em 6 Atributos a sua escolha e recebe 20 de Armadura Divina.</span>
-						</div>
-						<a href="#" class="txtSair">Fechar</a>
-				 </div>
+						  <span> "6 mãos e 6 Atributos heheeh" </span>
+							<h5 class="propriedadesItem">Propriedades</h5>
+						    <span>Recebe +1 em 6 Atributos a sua escolha e recebe 20 de Armadura Divina.</span>
+							<a href="#" class="txtSair">Fechar</a>
+						</div>	
+					</div>
 				</div>
 						
-				<div class="slots" id="slot1"></div>
-				<div class="slots" id="slot1"></div>
-				<div class="slots" id="slot1"></div>
-				<div class="slots" id="slot1"></div>
-				<div class="slots" id="slot1"></div>
-				<div class="slots" id="slot1"></div>
-				<div class="slots" id="slot1"></div>
-				<div class="slots" id="slot1"></div>
-				<div class="slots" id="slot1"></div>
-				<div class="slots" id="slot1"></div>
+				<div class="slots" id="slot"></div>
+				<div class="slots" id="slot"></div>
+				<div class="slots" id="slot"></div>
+				<div class="slots" id="slot"></div>
+				<div class="slots" id="slot"></div>
+				<div class="slots" id="slot"></div>
+				<div class="slots" id="slot"></div>
+				<div class="slots" id="slot"></div>
+				<div class="slots" id="slot"></div>
+				<div class="slots" id="slot"></div>
+				
 			</div>
 			 <div class="linhas">
 				<div class="slots">
