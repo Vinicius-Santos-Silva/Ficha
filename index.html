@@ -4,564 +4,7 @@
 	<title>Ficha-Jorge</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
-<style>
-	*{ font-family: sans-serif;}
-	
-
-	
-	body{
-		margin:0;
-		padding: 0;
-		background-image: url("Assests/Fundo.jpg");
-		background-repeat: no-repeat;
-		background-size: cover;
-		background-position: center center;
-	}
- 	#caixa{
-		width: 1000px;
-		margin: 0 auto;
-	} 
-
-/*		Inventario	*/
-	#Invetario{
-		width: 45px;
-		height: 45px;
-		background-color: white;
-		opacity: 0.88;
-		border-top-left-radius: 5px;
-		border-top-right-radius: 5px;
-		cursor: pointer;
-		position: relative;
-		left:700px;
-		top: 30px;
-
-	}
-	#mochila{
-		width:40px;
-		height: 40px;
-		display: block;
-		margin: auto;
-		position: relative;
-		top: 2px;
-	}
-	#texto{
-		display: none;
-		position: relative;
-		top: -54px;
-		left: 53px;
-		color: rgba(255, 255, 255, 0.632);
-		font-size: 20px;
-		width: 200px;
-		height: 50px;
-	}
-	#Invetario:hover #texto{
-		display: block;
-	}
-
-/*		Ficha*/	
-	#ficha{
-		width: 100%;
-		min-width: 989px;
-		height: 1665px;
-		background-color: rgb(255, 255, 255, 0.88);
-		border-radius: 3px;
-		margin-top: 30px;
-	}
-
-/* 		Imagem e nome do personagem*/
-	#personagem{
-		width: 300px;
-		height: 290px;
-	}
-	#imgPersonagem{
-		width: 300px;
-		height: 280px; 
-		text-align: center;
-		position: relative;
-		left: 40px;
-		top: 30px;
-	}
-	#imgPersonagem strong{
-		font-size: 23px;
-	}
-
-/* 		Barras de vida, sanidade, mana Pontos de Esforço*/
-	#caixaBarras{
-		position: relative;
-		top:78px;
-		left: 40px;
-	}
-	#caixaBarras progress{
-		display: block;
-	}
-	#caixaBarras span{
-		font-size: 18px;
-	}
-	#qtdeVida{
-		position: relative;
-		top: 21px;
-		left: 70px;
-	}
-	#qtdeSanidade{
-		position: relative;
-		top: 21px;
-		left: 34px;
-	}
-	#estadosSanidade{
-		position: relative;
-		left: 34px;
-	}
-	#qtdeMana{
-		position: relative;
-		top: 21px;
-		left: 65px;
-	}
-	#pontosEsforco{
-		display: inline-block;
-		padding-top: 20px;
-	}
-	#qtdePE{
-		position: relative;
-		top: 21px;
-		left:-38px;
-	}
-
-
-	#vida::-webkit-progress-value{
-		background-color: rgb(230, 59, 59);
-	} #vida::-moz-progress-bar{ background-color: rgb(230, 59, 59);}
-
-	#sanidade::-webkit-progress-value{
-		background-color: #3DB697;
-	} #sanidade::-moz-progress-bar{ background-color: #3DB697;}
-	
-	#mana::-webkit-progress-value{
-		background-color:rgb(59, 73, 230)
-	}  #mana::-moz-progress-bar{ background-color: rgb(59, 73, 230);}
-	#PE::-webkit-progress-value{
-		background-color: yellow;
-	} #PE::-moz-progress-bar{ background-color: yellow;}
-	.barras{
-		width: 300px;
-		height: 20px;
-		border-radius: 0;
-		border: 1px solid black;
-	}
-	.estado{
-		display: block;
-		padding-bottom: 8px;
-		padding-top: 8px;
-		position: relative;
-	}
-	.estado label{
-		font-size: 13.7px;
-	}
-
-/* 		Armas, Acao-Por-Combate, Armadura, Vantagem, Atributos  e Passiva */
-	.camposEmBaixo{
-		max-width: 300px;
-		min-width: 280px;
-		/*background-color: rgba(56, 52, 50, 0.87); */
-		background-color:rgb(83, 83, 83, 0.90);
-		position: relative;
-		left: 40px;
-		border-radius: 5px;
-		color: #FFFF;
-		word-wrap: break-word;
-	}
-	.titulos{	 
-		margin: 0;
-		padding: 0; 
-		color: #FFFF;
-		font-size:20px;
-		text-align: center;
-		padding-top: 5px; 
-	}
-
-/*  	Armas */
-	#caixaArmas{
-		height: 264px;
-		margin-top: 100px;
-	}
-	#Armas{
-		width: calc(300px - 12px);
-		height: 40px;
-		position: relative;
-		left: 7px;
-	}
-	#Armas img{
-		width: 40px;
-		height: 40px;
-		border-radius: 5px;
-		margin-bottom: 2px;
-	}
-
-	#Armas strong{
-		font-size: 16px;
-		padding: 8px;
-		color: #FFFF;
-		position: absolute;
-	}
-	.equipado, .txtequipado{
-		float: right;
-		color: rgb(255, 255, 255, 0.80);
-		position: relative;
-		top: 10px;
-		
-	}
-	/* Tentar fazer com que apareça uma div quando clicada na imagem
-	#teste{
-		display: none;
-		width: 200px;
-		height: 300px;
-		background-color:rgb(56, 52, 50, 0.50);
-		position: relative;
-		top: -84px;
-		left: -13rem;
-		border-radius: 5px;
-	}
-
-	#teste:target {
-		display: block;
-	}
-
-
-
-	.fechar{
-		float: right;
-	}
-	*/
-
-/* 		Ações por Combate */
-	#acaoCombate{
-		height: 100px;
-		margin-top: 16px;
-		font-size: 18px;
-		color:#FFFF;
-	}
-	#acaoCombate h4{
-		font-size: 20px;
-		text-align: center;
-		color: #FFFF;
-	}
-	#acaoCombate ul{
-		list-style-type: square;
-	}
-	#acaoCombate div{
-		position: relative;
-		top: -20px;
-	}
-	#move{
-		font-size: 15px;
-	}
-
-
-
-/* 		Defesa */
-	#armadura{
-		height: 100px;
-		font-size: 18px;
-	}
-	#armadura ul{
-		list-style-type: square;
-	}
-	#armadura div{
-		position: relative;
-		top: -20px;
-	}
-
-/*  	Vantagem */
-	#vantagem{
-		height: 100px;
-		margin-top: 18px;
-	}
-	#vantagem strong{
-		display: block;
-		font-size: 17px;
-		position: relative;
-		left: 20px;
-	}
-	#vantagem span{
-		font-size: 13px;
-	}
-
-
-/*  	Atributos*/
-	#atributos{
-		height: 200px;
-		margin-top: 18px;
-		font-size: 17px;
-	}
-	#atributos ul{
-		list-style-type: none;
-	}
-	#listaAtributos{
-		width: 180px;
-		position: relative;
-		top: -18px;
-		left: -20px;
-	}
-	#numerosAtributos{
-		width: 20px;
-		height: 155px;
-		float:right;
-		position:absolute;
-		left: 200px;
-		top: 0px;
-	}
-
-/*  	Passiva*/
-	#passiva{
-		height: 108px;
-		margin-top: 18px;
-		font-size: 15px;
-	}
-	#passiva div{
-		width:100%;
-		max-width: 280px;
-		max-height: 104px;
-		padding-left: 10px;
-		padding-top: 20px;
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-	}
-	
-
-
-/*		Caixa de Riquezas	*/
-	#caixaDeRiquezas{
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: 146px;
-		max-width: 150px; 	
-		height: 30px;
-		float: right;
-		position: relative;
-		bottom: 1590px;
-		right: 10px;
-		opacity: 0.84;
-	}
-	#caixaDeRiquezas img{
-		width: 20px;
-		height: 20px;
-	}
-
-
-/* 		Inputs da Caixa de Riquezas */
-	#caixaDeRiquezas input{
-		width: 20px;
-		max-width: 40px;
-		font-size: 16px;
-		outline: none;
-		border: none;
-		background: none;
-		padding: 5px;
-	}
-	input[type=number]::-webkit-inner-spin-button { 	 /* <-- Campos que fazem a remoção das setas de aumentar e diminuir */
-    -webkit-appearance: none;
-	}
-	input[type=number] { 
-	-moz-appearance: textfield;
-	appearance: textfield;
-	}
-
-
-
-/* 		Campos do lado  classe*/
-	.camposAoLado{
-		width: 550px;	
-		background-color:rgb(83, 83, 83, 0.90);
-		float: right;
-		position: relative;
-		bottom: 92.38%;
-		left: 96px;
-		border-radius: 5px;
-	}
-
-
-/*		Dados Pessoais	*/
-	#dadosPessoais{
-		height: 300px;
-		max-height: 400px;
-	}
-	#dadosPessoais h4{
-		padding-top: 5px;
-	}
-	#caixaDeInputs{
-		width: 96%;
-		max-height: 280px;
-		position: absolute;
-		top:50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-	}
-	#caixaDeInputs div{
-		padding: 15px 0 0;
-		margin-top: 10px;
-		position: relative;	
-	}
-	#caixaRaca{
-		width: 50%;
-		display: inline-block;
-	}
-	#caixaReino{
-		width: 50%;
-		float:right;
-	}
-	#raca{
-		width: 96%;
-	}
-
-/*	Classes dos dados Pessoais	*/
-	.inputs{
-		width: 100%;
-		border: 0;
-		padding: 0;
-		background-color: none;
-		font-size: 17px;
-		background:transparent;
-		color: white;
-		border-bottom: 2px #c2c2c2 solid;
-		outline: 0; /* elemento que tira o as bordas focadas quando clicamos em input*/
-		padding: 2px 0 ;
-		transition: border-color 0.2s;
-		display: block;
-	
-	&::placeholder{
-		color:transparent;
-	}
-	&:placeholder-shown ~ .camposDadosPessoais{
-		font-size: 1.2rem;
-		cursor: text;
-		top: 20px;
-	}
-}
-	.camposDadosPessoais{
-		position:absolute;
-		top: 0;
-		display: block;
-		transition: 0.2s;
-		font-size: 1rem;
-		color: #c2c2c2;
-	}
-	.inputs:focus{
-	~ .camposDadosPessoais{
-		position: absolute;
-		top: 0;
-		display: block;
-		transition: 0.2s;
-		font-size: 1rem;
-		color: #11998e;
-		font-weight: 700;
-	}
-	border-width: 3px;
-	font-weight: 200;
-	border-image: linear-gradient(to right, #11998E, #38ef7d);
-	border-image-slice:1;
-}
-	.inputs{
-		&:required,&:invalid {box-shadow:none;}
-	}
-
-/*		Propriedades da Raça	*/
-	#propriedadesRaca{
-		height: 240px;
-		max-height: 250px;
-		position: relative;
-		left: -50px;
-		margin-top: 20px;
-	}
-	#propriedadesRaca div{
-		padding: 10px;
-		padding-top: 6px;
-	}
-	#propriedadesRaca span{
-		display: block;
-		color:  #FFFF;
-		text-align: justify;
-		padding-bottom: 5px;
-	}
-
-/*		Perícias	*/	
-	#pericias{
-		margin-top: 20px;
-		left: -50px;
-		color: #FFFF;
-	}
-	#periciasBloco1{
-		width: 140px;
-		margin-left: 30px;
-		float: left;
-		padding: 1px;
-	}
-	#periciasBloco2{
-		width: 160px;
-		margin-left: 98px;
-		float: left;
-		padding: 1px;
-	}
-
-	.numerosBlocos{
-		max-width: 20px;
-		text-align: center;
-		padding: 1px;
-		float: left;
-	}
-	.vantagemPericias{
-		position: absolute;
-		margin-top: -18px;
-		margin-left: 25px;
-		font-size: 12px;
-	}
-	.valoresPericias{
-		width: 20px;
-		font-size: 16px;
-		color: #FFFF;
-		outline: none;
-		background: none;
-		border: none;
-		text-align: center;
-		padding-bottom: 2px;
-	}
-	.nomesPericias{
-		display: block;
-		padding-bottom: 3px;
-	}
-
-
-/*		Feitiços	*/
-	#feiticos{
-		margin-top: 20px;
-		left: -50px;
-		color: #FFF;
-	}
-	
-	#caixaFeiticos{
-		padding-left: 15px;
-		padding-right: 15px;
-		overflow: auto;
-		height: 550px;
-	}
-	#caixaFeiticos span{
-		display: block;
-		text-align: justify;
-		padding-bottom: 6px;
-	}
-	#posturaCombate{
-		margin: 0;
-	}
-
-	.feiticosRaca{
-		margin: 0;
-		font-size: 18px;
-		padding-bottom: 2px;
-	}
-	
-</style>
+	<link rel="stylesheet" type="text/css" href="index.css">
 	</head>
 
 <body>
@@ -571,8 +14,17 @@
 		<a href="./Paginas/Invetario.html" rel="inventario">
 			<img src="./Assests/mochila.png" alt="Mochila" id="mochila"> 
 		</a>
-			<div id="texto"><h3>Invetário</h3> </div>
-
+			<div id="texto" class="textosQueAparecem"><h3>Invetário</h3> </div>
+	</div>
+	<div id="anotacao">
+		<a href="#CampodeAnotacao"><img src="./Assests/prancheta.png" alt="anotação"></a>
+			<div id="CampodeAnotacao" class="estiloAnotacao">
+				<div>
+					<span>Abriu</span>
+					<a href="#">Fechar</a>
+				</div>
+			</div>
+			<div id="txtAnotacao" class="textosQueAparecem"><h3>Anotações</h3></div>
 	</div>
 
 		<div id="ficha">
@@ -584,9 +36,10 @@
 
 				<div id="caixaBarras">
 					<span>Vida</span>
-					<span id="qtdeVida">273 / 273</span>
-					<progress max="273" value="273" id="vida" class="barras"></progress>
-					
+					<div class="container">
+						<span class="txtQuantidades">273 / 273</span>
+						<progress max="273" value="273" id="vida" class="barras"></progress>
+					</div>
 
 					<div class="estado">
 						<input type="checkbox" name="lesaoGrabe"> <label>Lesão Grave</label>
@@ -595,9 +48,10 @@
 					</div>
 
 					<span>Sanidade</span>
-					<span id="qtdeSanidade">64 / 64</span>
-					<progress max="64" value="64" id="sanidade" class="barras"></progress>
-					
+					<div class="container">
+						<span class="txtQuantidades">64 / 64</span>
+						<progress max="64" value="64" id="sanidade" class="barras"></progress>
+					</div>
 
 					<div class="estado" id="estadosSanidade">
 						<input type="checkbox" name="traumatizado"> <label>Traumatizado</label>
@@ -605,12 +59,16 @@
 					</div>
 
 					<span>Mana</span> 
-					<span id="qtdeMana">61 / 61</span>
-					<progress max="61" value="61" id="mana" class="barras"></progress>
+					<div class="container">
+						<span class="txtQuantidades">61 / 61</span>
+						<progress max="61" value="61" id="mana" class="barras"></progress>
+					</div>
 
 					<span id="pontosEsforco">Pontos de Esforço</span>
-					<span id="qtdePE"> 00 / 00</span>
-					<progress max="100" value="100" id="PE" class="barras"></progress>
+					<div class="container">
+						<span class="txtQuantidades"> 00 / 00</span>
+						<progress max="100" value="100" id="PE" class="barras"></progress>
+					</div>
 				</div>
 				
 					<div id="caixaArmas" class="camposEmBaixo">
