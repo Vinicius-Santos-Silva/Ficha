@@ -91,7 +91,7 @@
     }
     .estiloAnotacao{
         width: 300px;
-        height: 300px;
+        height: 336px;
         background-color: wheat;
         position: absolute;
         top: 30px;
@@ -99,6 +99,79 @@
         border-radius: 5px;
         z-index: 3;
     }
+	.estiloAnotacao h3{
+		margin: 0;
+		margin-top: 3px;
+		text-align: center;
+	}
+	.caixaAnotacao{
+		width: 90%;
+		height: 290px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		background-color: rgba(51, 128, 0, 0.322);
+	}
+	.caixaAnotacao div{
+		width: 74%;
+		padding: 15px 0 0;
+		margin-top: 10px;
+		position: relative;
+	}
+	.estiloAnotacao a{
+		text-decoration: none;
+		color: black;
+		position: absolute;
+		top: 314px;
+		left: 234px;
+	}
+	.inputAnotacao{
+		width: 100%;
+		border:0;
+		outline: 0;
+		padding: 0;
+		border-bottom: 2px gray solid;
+		padding: 2px 0;
+		background-color: none;
+		font-size: 17px;
+		background: transparent;
+		transition: border-color 0.2s;
+		display: block;
+
+	&::placeholder{
+		color: transparent;
+	}
+	&::placeholder-shown ~ .rotuloAnotacao{
+		font-size: 1.2rem;
+		cursor: text;
+		top:20px;
+	}
+}
+	.rotuloAnotacao{
+		position: absolute;
+		top: 0;
+		display: block;
+		transition: 0.2s;
+		font-size: 1rem;
+		color: gray;
+	}
+	.inputAnotacao:focus{
+		~ .rotuloAnotacao{
+			position: absolute;
+			top: 0;
+			display: block;
+			transition: 0.2s;
+			font-size: 1rem;
+			color: dodgerblue;
+			font-weight: 700;
+		}
+		border-width:3px;
+		font-weight: 200;
+		border-image: linear-gradient(to right, dodgerblue, white);
+		border-image-slice: 1;
+	}
+
     #txtAnotacao{
         font-size: 20px;
         top: -54px;
@@ -107,6 +180,11 @@
     #anotacao:hover #txtAnotacao{
         display: block;
     }
+
+	#EnviarAnotacao{
+		background-color: transparent;	
+		cursor: pointer;
+	}
 
 /* 		Imagem e nome do personagem*/
 	#personagem{

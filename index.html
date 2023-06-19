@@ -19,10 +19,15 @@
 	<div id="anotacao">
 		<a href="#CampodeAnotacao"><img src="./Assests/prancheta.png" alt="anotação"></a>
 			<div id="CampodeAnotacao" class="estiloAnotacao">
+			 <h3>Anotações</h3>
+				<div class="caixaAnotacao">
 				<div>
-					<span>Abriu</span>
-					<a href="#">Fechar</a>
+					<input type="text" id="anotacao1" name="anotacao" placeholder="Escreva sua anotação" class="inputs" autocomplete="off">
+					<label for="anotacao1" class="camposDadosPessoais">Escreva sua anotação</label>
+					<input type="button" value="Enviar" id="EnviarAnotacao">
 				</div>
+				</div>
+					<a href="#">Fechar</a>
 			</div>
 			<div id="txtAnotacao" class="textosQueAparecem"><h3>Anotações</h3></div>
 	</div>
@@ -189,7 +194,7 @@
 				<h4 class="titulos tituloDados">Dados Pessoais</h4>
 
 				<div id="caixaDeInputs">
-					<div class="">
+					<div>
 						<input type="text" value="" name="nome"  placeholder="Jogador" autocomplete="off" class="inputs" id="nome" required>
 						<label for="nome" class="camposDadosPessoais">Jogador</label>
 					</div>
