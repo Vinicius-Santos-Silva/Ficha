@@ -385,23 +385,18 @@
 
 /*  	Vantagem */
 	#vantagem{
-		height: 100px;
 		margin-top: 18px;
 	}
-	#vantagem strong{
-		display: block;
-		font-size: 17px;
-		position: relative;
-		left: 20px;
-	}
 	#vantagem span{
-		font-size: 13px;
+		display: inline-block;
+		padding-bottom: 7px;
+		margin-left: 13px;
 	}
 
 
 /*  	Atributos*/
 	#atributos{
-		height: 200px;
+		height:90px ;
 		margin-top: 18px;
 		font-size: 17px;
 	}
@@ -409,19 +404,34 @@
 		list-style-type: none;
 	}
 	#listaAtributos{
-		width: 180px;
-		position: relative;
-		top: -18px;
-		left: -20px;
+		position: absolute;
+		top:50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		margin-left: -16px;
 	}
-	#numerosAtributos{
+	#listaAtributos{
+		width: 250px;
+		/* background-color: green; */
+		margin-top: 10px;
+	}
+	#listaAtributos input{
 		width: 20px;
-		height: 155px;
-		float:right;
-		position:absolute;
-		left: 200px;
-		top: 0px;
+		border: none;
+		outline: none;
+		background: transparent;
+		color: white;
+		font-size: 17px;
 	}
+	#ladoDireito{
+		float: right;
+		top: 0;
+		margin-top: -22px;
+	}
+	#emBaixo{
+		text-align: center;
+	}
+
 
 /*  	Passiva*/
 	#passiva{
@@ -433,14 +443,44 @@
 		width:100%;
 		max-width: 280px;
 		max-height: 104px;
-		padding-left: 10px;
-		padding-top: 20px;
+		padding-top: 10px;
 		position: absolute;
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
+		text-align: justify;
+		font-size: 17px;
 	}
-	
+
+/*		 Selos */
+	#selos{
+		margin-top: 18px;
+		height: 80px;
+	}
+	#selos span{
+		display: block;
+	}
+	#CaixaSelos{
+		width: 290px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		margin-top: 8px;
+		margin-left: 20px;
+		/* background-color: green; */
+	}
+	#Selos1{
+		width: 140px;
+		/* background-color: red; */
+	}
+	#Selos2{
+		width: 130px;
+		float: right;
+		margin-top: -38px;
+		/* background-color: blue; */
+	}
+
 
 
 /*		Caixa de Riquezas	*/
@@ -453,7 +493,7 @@
 		height: 30px;
 		float: right;
 		position: relative;
-		bottom: 1590px;
+		bottom: 1598px;
 		right: 10px;
 		opacity: 0.84;
 	}
@@ -489,7 +529,7 @@
 		background-color:rgb(83, 83, 83, 0.90);
 		float: right;
 		position: relative;
-		bottom: 92.38%;
+		bottom: 1550px;
 		left: 96px;
 		border-radius: 5px;
 	}
@@ -656,7 +696,7 @@
 		padding-left: 15px;
 		padding-right: 15px;
 		overflow: auto;
-		height: 564px;
+		height: 577px;
 	}
 	#caixaFeiticos span{
 		display: block;
