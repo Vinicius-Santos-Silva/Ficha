@@ -81,18 +81,90 @@
         height: 40px;
         display: block;
         margin: auto;
+    }    
+	#anotacao:hover #txtAnotacao{
+        display: block;
     }
-
     #CampodeAnotacao{
         display: none;
     }
     #CampodeAnotacao:target{
         display: block;
     }
+
+	#EnviarAnotacao{
+		background-color: transparent;	
+		cursor: pointer;
+	}
+
+	#anotacoesSalvas{
+		height: 20px;
+		/* position: absolute; */
+	}
+
+	/* Tentar fazer com que as div sejam empurradas para não ficar aquele espaço enorme */
+	/* #anotacoesSalvas, #addAnotacao{
+		transition: top 0.3s ease-in-out;
+	}
+	#addAnotacao:hover{
+		margin-top: 20px;
+	} */
+	#addAnotacao{
+		position: absolute;
+		padding: 15px 0 0;
+		margin-top: 2px;
+		min-height: 60px;
+	}
+	.inputAnotacao{
+		width: 100%;
+		border: 0;
+		border-bottom: 2px solid #A8936A;
+		outline: 0;
+		font-size: 1.1rem;
+		color: black;
+		padding: 2px 0;
+		background: transparent;
+		transition: border-color 0.2s;
+	
+		 &::placeholder{ /* Campo que faz sumir o texto escrito no placeHolder */
+			color: transparent;
+		}
+
+		 &:placeholder-shown ~ .legendaAnotacao{ /* Campo que faz com que o label fique no lugar do placeHolder */
+			font-size: 1.1rem;
+			cursor: text;
+			top: 20px;
+		}
+	}
+	.legendaAnotacao{
+		position: absolute;
+		top: 0;
+		display: block;
+		transition: 0.2s;
+		font-size: 1rem;
+		color: #A8936A;
+	}
+	.inputAnotacao:focus{
+		~ .legendaAnotacao{
+			position: absolute;
+			top: 0;
+			display: block;
+			transition: 0.2s;
+			font-size: 1rem;
+			color: #1e90ff;
+			font-weight: 700;
+		}
+		font-weight: 400;
+		border-width: 3px;
+		border-image: linear-gradient(to right, #1E90FF,#1872CC);
+		border-image-slice: 1;
+	}
+
+
     .estiloAnotacao{
         width: 300px;
         height: 336px;
-        background-color: wheat;
+        background-color: #f5deb2;
         position: absolute;
         top: 30px;
         left: 90px;
@@ -111,13 +183,7 @@
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
-		background-color: rgba(51, 128, 0, 0.322);
-	}
-	.caixaAnotacao div{
-		width: 74%;
-		padding: 15px 0 0;
-		margin-top: 10px;
-		position: relative;
+		/* background-color: rgba(51, 128, 0, 0.322); */
 	}
 	.estiloAnotacao a{
 		text-decoration: none;
@@ -126,65 +192,14 @@
 		top: 314px;
 		left: 234px;
 	}
-	.inputAnotacao{
-		width: 100%;
-		border:0;
-		outline: 0;
-		padding: 0;
-		border-bottom: 2px gray solid;
-		padding: 2px 0;
-		background-color: none;
-		font-size: 17px;
-		background: transparent;
-		transition: border-color 0.2s;
-		display: block;
-
-	&::placeholder{
-		color: transparent;
-	}
-	&::placeholder-shown ~ .rotuloAnotacao{
-		font-size: 1.2rem;
-		cursor: text;
-		top:20px;
-	}
-}
-	.rotuloAnotacao{
-		position: absolute;
-		top: 0;
-		display: block;
-		transition: 0.2s;
-		font-size: 1rem;
-		color: gray;
-	}
-	.inputAnotacao:focus{
-		~ .rotuloAnotacao{
-			position: absolute;
-			top: 0;
-			display: block;
-			transition: 0.2s;
-			font-size: 1rem;
-			color: dodgerblue;
-			font-weight: 700;
-		}
-		border-width:3px;
-		font-weight: 200;
-		border-image: linear-gradient(to right, dodgerblue, white);
-		border-image-slice: 1;
-	}
-
     #txtAnotacao{
         font-size: 20px;
         top: -54px;
         left: 50px;
     }
-    #anotacao:hover #txtAnotacao{
-        display: block;
-    }
 
-	#EnviarAnotacao{
-		background-color: transparent;	
-		cursor: pointer;
-	}
+
+
 
 /* 		Imagem e nome do personagem*/
 	#personagem{
@@ -696,15 +711,24 @@
 		padding-left: 15px;
 		padding-right: 15px;
 		overflow: auto;
-		height: 577px;
+		height: 576px;
 	}
 	#caixaFeiticos span{
 		display: block;
-		text-align: justify;
+		/* text-align: justify; */
 		padding-bottom: 6px;
+	}
+	#caixaFeiticos input{
+		width: 400px;
+		margin-top: 2px;
+		margin-bottom: 10px;
 	}
 	#posturaCombate{
 		margin: 0;
+	}
+	#posturaDescrição{
+		font-size: 12px;
+		padding-top: 3px;
 	}
 
 	.feiticosRaca{
