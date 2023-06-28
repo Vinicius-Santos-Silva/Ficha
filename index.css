@@ -64,7 +64,7 @@
     }
 
 
-/*      Anotação */
+/*      Anotação Estilo da parte superior que faz faz aparecer a div */
     #anotacao{
         width: 45px;
         height: 45px;
@@ -92,31 +92,68 @@
         display: block;
     }
 
-	#EnviarAnotacao{
-		background-color: transparent;	
-		cursor: pointer;
-	}
 
-	#anotacoesSalvas{
+	/* #anotacoesSalvas{
 		height: 20px;
-		/* position: absolute; */
-	}
 
-	/* Tentar fazer com que as div sejam empurradas para não ficar aquele espaço enorme */
+			/* Tentar fazer com que as div sejam empurradas para não ficar aquele espaço enorme */
 	/* #anotacoesSalvas, #addAnotacao{
 		transition: top 0.3s ease-in-out;
 	}
 	#addAnotacao:hover{
 		margin-top: 20px;
-	} */
+	} 
+*/
+	
+/* Estilos da Div que aparece quando clicamos na anotação */
+	.estiloAnotacao{
+		width: 380px;
+		height: 336px;
+		background-color: #f5deb2;
+		position: absolute;
+		top: 30px;
+		left: 90px;
+		border-radius: 5px;
+		z-index: 3;
+	}
+	.estiloAnotacao h3{
+		margin: 0;
+		margin-top: 3px;
+		text-align: center;
+	}
+	.caixaAnotacao{
+		width: 90%;
+		height: 290px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		/* background-color: rgba(51, 128, 0, 0.322); */
+	}
+	.estiloAnotacao a{
+		text-decoration: none;
+		color: black;
+		position: absolute;
+		top: 312px;
+		left: 280px;
+	}
+	#txtAnotacao{
+		font-size: 20px;
+		top: -54px;
+		left: 50px;
+	}
+
+
+	/*	Estilos que aplicam o efeito no input text		*/
 	#addAnotacao{
 		position: absolute;
+		width: 100%;
 		padding: 15px 0 0;
 		margin-top: 2px;
 		min-height: 60px;
 	}
 	.inputAnotacao{
-		width: 100%;
+		width: 60%;
 		border: 0;
 		border-bottom: 2px solid #A8936A;
 		outline: 0;
@@ -125,8 +162,8 @@
 		padding: 2px 0;
 		background: transparent;
 		transition: border-color 0.2s;
-	
-		 &::placeholder{ /* Campo que faz sumir o texto escrito no placeHolder */
+		
+		&::placeholder{ /* Campo que faz sumir o texto escrito no placeHolder */
 			color: transparent;
 		}
 
@@ -161,42 +198,46 @@
 	}
 
 
-    .estiloAnotacao{
-        width: 300px;
-        height: 336px;
-        background-color: #f5deb2;
-        position: absolute;
-        top: 30px;
-        left: 90px;
-        border-radius: 5px;
-        z-index: 3;
-    }
-	.estiloAnotacao h3{
-		margin: 0;
-		margin-top: 3px;
+	/*	Estilo do button de anotação*/
+	#EnviarAnotacao{
+		background-image: url("./Assests/enviado.png"),
+		  url("./Assests/entrega-rapida.png");
+		background-repeat: no-repeat;
+		background-size:24px;
+		background-position: calc(0% - 100px), calc(100% - 8px);
+		background-color:rgb(255 209 98) ;
+		color: rgb(26 28 60);
+		cursor: pointer;
+		display: block;
+		position: relative;
+		border: 2px solid rgb(255 209 98);
+		border-radius: 2px;
+		font-size: 14px;
+		text-transform: uppercase;
+		font-weight: 700;
+		width: 130px;
 		text-align: center;
-	}
-	.caixaAnotacao{
-		width: 90%;
-		height: 290px;
+		overflow: hidden;
+		letter-spacing: 0.08em;
+		white-space: nowrap;
+		transition: background-position 2s ease;
+	  
 		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		/* background-color: rgba(51, 128, 0, 0.322); */
+		margin-left: 5px;
+	  
+		&:hover {
+		  background-position: calc(32% - 30px), calc(100% + 100px);
+		}
+	  }
+
+/* Campo para que o input e o botão fique um do laado do outro*/
+	#addAnotacao input,	
+	#addAnotacao button{
+		display: inline-block
 	}
-	.estiloAnotacao a{
-		text-decoration: none;
-		color: black;
-		position: absolute;
-		top: 314px;
-		left: 234px;
-	}
-    #txtAnotacao{
-        font-size: 20px;
-        top: -54px;
-        left: 50px;
-    }
+
+
+
 
 
 
@@ -737,3 +778,11 @@
 		padding-bottom: 2px;
 	}
 	
+
+/* Campo para adicionar um novo Feitiço */
+	#Input1{
+		display: none;
+	}
+	#Input1:target{
+		display: block;
+	}
